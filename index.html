@@ -218,19 +218,20 @@
             }
             75% { 
                 opacity: 1;
-                bottom: 460px;
+                /* כאן נציב את נקודת ההתנגשות */
+                bottom: calc(46vh + 60px); /* 46% מהמסך + תיקון לגובה הקרקע */
                 left: 60%;
                 transform: translateX(-50%) rotate(-45deg);
             }
             76% { 
                 opacity: 0;
-                bottom: 460px;
+                bottom: calc(46vh + 60px);
                 left: 60%;
                 transform: translateX(-50%) rotate(-45deg);
             }
             100% { 
                 opacity: 0;
-                bottom: 460px;
+                bottom: calc(46vh + 60px);
                 left: 60%;
                 transform: translateX(-50%) rotate(-45deg);
             }
