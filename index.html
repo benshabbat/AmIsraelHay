@@ -128,12 +128,22 @@
             height: 8px;
             background: linear-gradient(90deg, #e0e0e0, #ffffff);
             border-radius: 0 8px 8px 0;
-            bottom: 190px;
+            top: 70%;
             left: 15%;
             transform: translateX(-50%);
             opacity: 0;
-            animation: interceptor-launch 6s ease-in-out infinite;
+            animation: interceptor-launch 6s ease-in-out infinite, missile-shake 0.25s linear infinite;
             z-index: 10;
+        }
+
+        /* תנודות גוף הטיל */
+        @keyframes missile-shake {
+            0%   { transform: translateX(-50%) rotate(0deg); }
+            20%  { transform: translateX(-50%) rotate(2deg); }
+            40%  { transform: translateX(-50%) rotate(-2deg); }
+            60%  { transform: translateX(-50%) rotate(1.5deg); }
+            80%  { transform: translateX(-50%) rotate(-1.5deg); }
+            100% { transform: translateX(-50%) rotate(0deg); }
         }
 
         /* חרוט הטיל */
@@ -194,46 +204,45 @@
         @keyframes interceptor-launch {
             0% { 
                 opacity: 0;
-                bottom: 190px;
+                top: 70%;
                 left: 15%;
-                transform: translateX(-50%) rotate(-45deg);
+                transform: translateX(-50%) rotate(45deg);
             }
             5% { 
                 opacity: 1;
-                bottom: 190px;
+                top: 70%;
                 left: 15%;
-                transform: translateX(-50%) rotate(-45deg);
+                transform: translateX(-50%) rotate(45deg);
             }
             25% { 
                 opacity: 1;
-                bottom: 280px;
+                top: 55%;
                 left: 30%;
-                transform: translateX(-50%) rotate(-45deg);
+                transform: translateX(-50%) rotate(45deg);
             }
             50% { 
                 opacity: 1;
-                bottom: 370px;
+                top: 46%;
                 left: 45%;
-                transform: translateX(-50%) rotate(-45deg);
+                transform: translateX(-50%) rotate(45deg);
             }
             75% { 
                 opacity: 1;
-                /* כאן נציב את נקודת ההתנגשות */
-                bottom: calc(46vh + 60px); /* 46% מהמסך + תיקון לגובה הקרקע */
+                top: 46%;
                 left: 60%;
-                transform: translateX(-50%) rotate(-45deg);
+                transform: translateX(-50%) rotate(45deg);
             }
             76% { 
                 opacity: 0;
-                bottom: calc(46vh + 60px);
+                top: 46%;
                 left: 60%;
-                transform: translateX(-50%) rotate(-45deg);
+                transform: translateX(-50%) rotate(45deg);
             }
             100% { 
                 opacity: 0;
-                bottom: calc(46vh + 60px);
+                top: 46%;
                 left: 60%;
-                transform: translateX(-50%) rotate(-45deg);
+                transform: translateX(-50%) rotate(45deg);
             }
         }
 
