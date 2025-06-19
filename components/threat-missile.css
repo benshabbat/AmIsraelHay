@@ -1,0 +1,50 @@
+/* threat-missile.css - עיצוב טיל אויב */
+.threat-missile {
+    position: absolute;
+    width: 50px;
+    height: 12px;
+    background: linear-gradient(270deg, #ff4444 0%, #cc2222 60%, #660000 100%);
+    border-radius: 14px 0 0 14px;
+    z-index: 60;
+    animation: threat-approach 6s ease-in-out infinite;
+    left: 60vw;
+    top: -60px;
+}
+.threat-missile.missile-alt1 { z-index: 61; }
+.threat-missile.missile-alt2 { z-index: 62; }
+.threat-missile.missile-alt3 { z-index: 63; }
+
+.threat-missile::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 12px solid #aa1111;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    left: 100%;
+    top: 0;
+}
+.threat-missile::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 8px;
+    background: linear-gradient(270deg, transparent, #ff6600, #ff2222);
+    border-radius: 50%;
+    left: 100%;
+    top: 2px;
+    animation: flame-flicker 0.1s linear infinite alternate;
+    filter: blur(1px) brightness(1.2);
+    box-shadow: 0 0 10px 2px #ff0a, 0 0 20px 4px #f008;
+}
+@keyframes threat-approach {
+    0% { left: 60vw; top: -60px; transform: rotate(90deg); opacity: 1; }
+    60% { left: 60vw; top: 45vh; transform: rotate(90deg); opacity: 1; } /* נקודת התנגשות */
+    61% { left: 60vw; top: 45vh; transform: rotate(90deg); opacity: 0; }
+    100% { left: 60vw; top: 45vh; transform: rotate(90deg); opacity: 0; }
+}
+@keyframes flame-flicker {
+    0% { filter: brightness(1.2); }
+    100% { filter: brightness(1.6); }
+}
