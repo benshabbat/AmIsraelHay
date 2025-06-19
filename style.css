@@ -7,7 +7,6 @@ body {
     position: relative;
 }
 
-/* כוכבים ברקע */
 .stars {
     position: absolute;
     width: 100%;
@@ -29,7 +28,6 @@ body {
     100% { opacity: 1; }
 }
 
-/* קרקע */
 .ground {
     position: absolute;
     bottom: 0;
@@ -52,7 +50,6 @@ body {
     border-radius: 10px;
 }
 
-/* משאית משופרת */
 .launcher-truck {
     width: 130px;
     height: 28px;
@@ -144,7 +141,6 @@ body {
     z-index: 6;
 }
 
-/* גלגלים */
 .wheel {
     position: absolute;
     width: 18px;
@@ -165,7 +161,6 @@ body {
     opacity: 0.8;
 }
 
-/* רדאר דמוי EL/M-2084 */
 .radar-system {
     position: absolute;
     left: -16px;
@@ -223,18 +218,6 @@ body {
     100% { transform: translate(-50%, -50%) rotate(360deg);}
 }
 
-/* === טילים, יירוטים ופיצוצים === */
-/* כל חוקי threat-missile הועברו ל-threat-missile.css */
-
-/* === בנייני מגורים במרכז המסך === */
-/* כל חוקי הבניינים, חלונות, דלתות, דגלים, גג אדום, וכו' יופיעו רק ב-buildings.css */
-/* .buildings, .building, .windows, .window, .door, .flying-israel-flag וכו' - יש להגדיר רק בקובץ הרלוונטי */
-
-/* === מטוס קרב ישראלי מציאותי === */
-/* כל חוקי המטוס הועברו ל-fighter-jet.css */
-/* .fighter-jet, .jet-body, .jet-nose, .jet-cockpit, .jet-tail, .jet-wing-left, .jet-wing-right, .jet-flag, .jet-flame וכו' - יש להגדיר רק בקובץ הרלוונטי */
-
-/* הודעת עם ישראל חי */
 .am-israel-chai {
     position: absolute;
     top: 50%;
@@ -272,7 +255,6 @@ body {
     }
 }
 
-/* כותרת */
 .title {
     position: absolute;
     top: 20px;
@@ -285,7 +267,6 @@ body {
     z-index: 100;
 }
 
-/* מידע על המערכת */
 .system-info {
     position: absolute;
     top: 60px;
@@ -307,7 +288,6 @@ body {
     51%, 100% { color: #88ff88; }
 }
 
-/* טילים רנדומליים */
 .random-missiles {
     position: absolute;
     top: 0;
@@ -363,9 +343,7 @@ body {
     100% { opacity: 0; left: 50vw; transform: scale(1.1) rotate(-10deg); }
 }
 
-/* === פיצוצים רנדומליים במסלולים מגוונים === */
 .napr-explosion1, .napr-explosion2, .napr-explosion3, .napr-explosion4, .napr-explosion5 {
-    /* בסיס עיצוב לכל הפיצוצים */
     position: absolute;
     width: 110px;
     height: 110px;
@@ -378,33 +356,27 @@ body {
     border: 2px solid #fff8;
     pointer-events: none;
 }
-/* --- מיקום ותזמון ייחודיים לכל פיצוץ --- */
 .napr-explosion1 {
-    /* זוג 1 */
     top: 10%;
     left: 45vw;
     animation-delay: 2.5s;
 }
 .napr-explosion2 {
-    /* זוג 2 */
     top: 30%;
     left: 50vw;
     animation-delay: 3.5s;
 }
 .napr-explosion3 {
-    /* זוג 3 */
     top: 60%;
     left: 55vw;
     animation-delay: 4.5s;
 }
 .napr-explosion4 {
-    /* זוג 4 */
     top: 80%;
     left: 60vw;
     animation-delay: 5.5s;
 }
 .napr-explosion5 {
-    /* זוג 5 */
     top: 50%;
     left: 52vw;
     animation-delay: 6.5s;
@@ -418,7 +390,6 @@ body {
     100% { opacity: 0; transform: translate(50%, -50%) scale(0); }
 }
 
-/* פיצוץ התנגשות ראשי */
 .intercept-explosion.main-explosion {
     position: absolute;
     width: 120px;
@@ -435,7 +406,6 @@ body {
     pointer-events: none;
 }
 
-/* בניינים - עיצוב משופר */
 .buildings {
     position: absolute;
     bottom: 90px;
@@ -499,7 +469,7 @@ body {
     transform: unset;
     z-index: unset;
     margin-bottom: 8px;
-    overflow: hidden; /* רק החלונות חותכים את התוכן הפנימי שלהן */
+    overflow: hidden;
 }
 .building .window {
     width: 11px;
@@ -552,13 +522,12 @@ body {
     border-color: #ffeb3b;
 }
 
-/* דגל ישראל מתעופף מעל הבניינים - גרסה עם קומפוננטה */
 .flying-israel-flag {
     position: absolute;
     left: 50%;
-    top: -38px; /* מעט נמוך יותר, אך לא ייחתך */
+    top: -38px;
     transform: translateX(-50%);
-    z-index: 1000 !important; /* גבוה יותר מהבניין */
+    z-index: 1000 !important;
     animation: flag-float 3.5s ease-in-out infinite alternate;
     width: 48px;
     height: 32px;
@@ -573,7 +542,6 @@ body {
     100% { top: -38px; transform: translateX(-50%) rotate(-6deg) scale(1.05); }
 }
 
-/* fighter-jet.css - עיצוב מטוס קרב ישראלי */
 .fighter-jet {
     position: absolute;
     width: 90px;
@@ -704,7 +672,6 @@ body {
     100% { filter: blur(2.5px) brightness(1.7); }
 }
 
-/* interceptor-missile.css - עיצוב ואנימציה ליירוטים */
 .interceptor-missile {
     position: absolute;
     width: 48px;
@@ -755,7 +722,7 @@ body {
 @keyframes interceptor-launch-from-dome {
     0% { left: 18.5vw; bottom: 120px; transform: rotate(-14deg); opacity: 0; }
     5% { left: 18.5vw; bottom: 120px; transform: rotate(-14deg); opacity: 1; }
-    60% { left: 54vw; bottom: 45vh; transform: rotate(-45deg); opacity: 1; } /* נקודת התנגשות */
+    60% { left: 54vw; bottom: 45vh; transform: rotate(-45deg); opacity: 1; }
     61% { left: 54vw; bottom: 45vh; transform: rotate(-45deg); opacity: 0; }
     100% { left: 54vw; bottom: 45vh; transform: rotate(-45deg); opacity: 0; }
 }
@@ -772,7 +739,6 @@ body {
     100% { filter: brightness(1.6); }
 }
 
-/* threat-missile.css - עיצוב טיל אויב משופר */
 .threat-missile {
     position: absolute;
     width: 54px;
@@ -833,8 +799,6 @@ body {
     100% { left: 54vw; top: 45vh; transform: rotate(270deg) scale(1.12); opacity: 0; }
 }
 
-/* --- START: components/iron-dome-system.css --- */
-/* מערכת כיפת ברזל - עיצוב משופר */
 .iron-dome-system {
     position: absolute;
     bottom: 90px;
@@ -861,7 +825,6 @@ body {
     0% { opacity: 0; transform: scale(0.8) translateY(40px); }
     100% { opacity: 1; transform: scale(1) translateY(0); }
 }
-/* קישוטים קטנים */
 .iron-dome-system::before {
     content: '';
     position: absolute;
@@ -888,9 +851,7 @@ body {
     opacity: 0.13;
     z-index: 1;
 }
-/* --- END: components/iron-dome-system.css --- */
 
-/* --- START: components/israel-flag.css --- */
 .israel-flag {
   width: 48px;
   height: 32px;
@@ -945,7 +906,6 @@ body {
   filter: drop-shadow(0 0 1.5px #0057b8cc);
 }
 
-/* דגל ישראל קטן לטיל יירוט ולמטוס */
 .israeli-flag {
     position: absolute;
     left: 18px;
@@ -986,10 +946,7 @@ body {
     width: 14px;
     height: 14px;
 }
-/* --- END: components/israel-flag.css --- */
 
-/* --- START: components/launcher-truck.css --- */
-/* משאית משופרת */
 .launcher-truck {
     width: 130px;
     height: 28px;
@@ -1081,7 +1038,6 @@ body {
     z-index: 6;
 }
 
-/* גלגלים */
 .wheel {
     position: absolute;
     width: 18px;
@@ -1102,7 +1058,6 @@ body {
     opacity: 0.8;
 }
 
-/* מתקן השיגור - דמוי ישראלי */
 .launcher-unit {
     position: absolute;
     left: 92px;
@@ -1135,7 +1090,6 @@ body {
     left: 8px;
     top: 12px;
 }
-/* טילים מציאותיים על המשגר */
 .cassette {
     position: relative;
     width: 30px;
@@ -1213,67 +1167,6 @@ body {
     z-index: 6;
     pointer-events: none;
 }
-/* --- END: components/launcher-unit.css --- */
-
-/* --- START: components/radar-system.css --- */
-/* רדאר דמוי EL/M-2084 */
-.radar-system {
-    position: absolute;
-    left: -16px;
-    bottom: 70px;
-    width: 40px;
-    height: 28px;
-    background: linear-gradient(180deg, #bdbdbd 0%, #888 100%);
-    border-radius: 4px 4px 8px 8px;
-    border: 2.5px solid #444;
-    box-shadow: 0 3px 12px #0006;
-    z-index: 4;
-}
-.radar-frame {
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    width: 36px;
-    height: 22px;
-    border: 3px solid #263238;
-    border-radius: 5px;
-    background: #2223;
-}
-.radar-dish {
-    position: absolute;
-    left: 10px;
-    top: 8px;
-    width: 20px;
-    height: 12px;
-    background: #b0bec5;
-    border-radius: 4px 4px 8px 8px/8px 8px 12px 12px;
-    border: 2px solid #607d8b;
-    z-index: 2;
-    animation: radar-pulse 2s linear infinite;
-}
-.radar-dish::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 14px;
-    height: 2.5px;
-    background: linear-gradient(90deg, #0f0 60%, transparent 100%);
-    transform: translate(-50%, -50%) rotate(0deg);
-    transform-origin: left center;
-    animation: radar-sweep 2s linear infinite;
-    opacity: 0.7;
-}
-@keyframes radar-pulse {
-    0% { box-shadow: 0 0 5px #00ff00; }
-    50% { box-shadow: 0 0 15px #00ff00; }
-    100% { box-shadow: 0 0 5px #00ff00; }
-}
-@keyframes radar-sweep {
-    0% { transform: translate(-50%, -50%) rotate(0deg);}
-    100% { transform: translate(-50%, -50%) rotate(360deg);}
-}
-/* --- END: components/radar-system.css --- */
 
 /* Utility classes for DRY and clean code */
 .responsive-container {
