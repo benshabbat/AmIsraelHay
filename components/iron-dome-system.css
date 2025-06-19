@@ -1,0 +1,10 @@
+/* מערכת כיפת ברזל */
+.iron-dome-system {
+    position: absolute;
+    bottom: 90px;
+    left: 18%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 140px;
+    z-index: 10;
+}

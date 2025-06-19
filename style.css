@@ -52,17 +52,6 @@ body {
     border-radius: 10px;
 }
 
-/* מערכת כיפת ברזל */
-.iron-dome-system {
-    position: absolute;
-    bottom: 90px;
-    left: 18%;
-    transform: translateX(-50%);
-    width: 160px;
-    height: 140px;
-    z-index: 10;
-}
-
 /* משאית משופרת */
 .launcher-truck {
     width: 130px;
@@ -174,48 +163,6 @@ body {
     background: #eee;
     border: 1.5px solid #bbb;
     opacity: 0.8;
-}
-
-/* מתקן השיגור - דמוי ישראלי */
-.launcher-unit {
-    position: absolute;
-    left: 92px;
-    bottom: 28px;
-    width: 40px;
-    height: 66px;
-    background: linear-gradient(120deg, #bdbdbd 0%, #888 100%);
-    border-radius: 5px;
-    border: 2.5px solid #444;
-    box-shadow: 0 6px 18px 2px #2228;
-    transform: rotate(-14deg);
-}
-.launcher-unit::before {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: 10px;
-    width: 28px;
-    height: 48px;
-    background: repeating-linear-gradient(90deg, #e0e0e0 0 5px, #888 5px 10px);
-    border-radius: 2.5px;
-    opacity: 0.85;
-    border: 1.5px solid #aaa;
-}
-.launcher-cassettes {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    position: absolute;
-    left: 8px;
-    top: 12px;
-}
-.cassette {
-    width: 30px;
-    height: 10px;
-    background: linear-gradient(90deg, #e0e0e0 0%, #bdbdbd 100%);
-    border: 2px solid #757575;
-    border-radius: 2px;
-    box-shadow: 0 2px 4px #8888;
 }
 
 /* רדאר דמוי EL/M-2084 */
@@ -428,7 +375,7 @@ body {
     top: 20%;
     right: -60px;
     animation: threat-approach 6s ease-in-out infinite;
-    z-index: 5;
+    z-index: 30;
 }
 .threat-missile::before {
     content: '';
@@ -494,17 +441,17 @@ body {
 .threat-missile.missile-alt1 {
     top: 30%;
     animation: threat-approach-alt1 7s ease-in-out infinite;
-    z-index: 6;
+    z-index: 31;
 }
 .threat-missile.missile-alt2 {
     top: 60%;
     animation: threat-approach-alt2 8s ease-in-out infinite;
-    z-index: 7;
+    z-index: 32;
 }
 .threat-missile.missile-alt3 {
     top: 45%;
     animation: threat-approach-alt3 6.5s ease-in-out infinite;
-    z-index: 8;
+    z-index: 33;
 }
 @keyframes threat-approach-alt1 {
     0% { right: -60px; top: 30%; transform: rotate(-35deg); }
@@ -580,7 +527,6 @@ body {
     z-index: 15;
     transform: translate(50%, -50%);
     box-shadow: 0 0 80px 30px #ff0a, 0 0 160px 60px #f008;
-    border: 2px solid #fff8;
 }
 /* פיצוצים במסלולים מגוונים */
 .intercept-explosion.alt1 {
