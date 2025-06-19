@@ -322,6 +322,32 @@ body {
     background: linear-gradient(180deg, #0038b8 0%, #0038b8 16.67%, #ffffff 16.67%, #ffffff 83.33%, #0038b8 83.33%, #0038b8 100%);
     border-radius: 1px;
     z-index: 11;
+    box-shadow: 0 0 4px #0038b888;
+}
+
+/* דגל ישראל לבניינים */
+.building .building-flag {
+    width: 14px;
+    height: 8px;
+    background: linear-gradient(180deg, #0038b8 0%, #0038b8 16.67%, #ffffff 16.67%, #ffffff 83.33%, #0038b8 83.33%, #0038b8 100%);
+    border-radius: 1px;
+    border: 1px solid #0038b8;
+    margin: 2px auto 0 auto;
+    box-shadow: 0 0 4px #0038b888;
+    position: relative;
+    z-index: 10;
+}
+.building .building-flag::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 4px;
+    top: 2.5px;
+    width: 6px;
+    height: 3px;
+    border: 1px solid #0038b8;
+    border-radius: 2px;
+    opacity: 0.7;
 }
 
 /* להבה של טיל היירוט - מאחור */
@@ -693,39 +719,40 @@ body {
 }
 .random-missile {
     background: linear-gradient(90deg, #ff4444 0%, #cc2222 80%, #660000 100%);
-    animation: missile-move 5s linear infinite;
+    animation: missile-move-center 5s linear infinite;
 }
 .random-interceptor {
     background: linear-gradient(90deg, #e0e0e0 0%, #b0b0b0 80%, #888 100%);
     border: 1px solid #bbb;
     box-shadow: 0 6px 18px 2px #222a, 0 0 12px 2px #00f6;
-    animation: interceptor-move 5s linear infinite;
+    animation: interceptor-move-center 5s linear infinite;
 }
-.random-missile:nth-child(1) { top: 10%; left: 0; animation-delay: 0s; }
-.random-missile:nth-child(2) { top: 30%; left: 0; animation-delay: 1s; }
-.random-missile:nth-child(3) { top: 60%; left: 0; animation-delay: 2s; }
-.random-missile:nth-child(4) { top: 80%; left: 0; animation-delay: 3s; }
-.random-missile:nth-child(5) { top: 50%; left: 0; animation-delay: 4s; }
-.random-interceptor:nth-child(1) { bottom: 10%; right: 0; animation-delay: 0.5s; }
-.random-interceptor:nth-child(2) { bottom: 30%; right: 0; animation-delay: 1.5s; }
-.random-interceptor:nth-child(3) { bottom: 60%; right: 0; animation-delay: 2.5s; }
-.random-interceptor:nth-child(4) { bottom: 80%; right: 0; animation-delay: 3.5s; }
-.random-interceptor:nth-child(5) { bottom: 50%; right: 0; animation-delay: 4.5s; }
-@keyframes missile-move {
-    0% { opacity: 0; left: 0; transform: scale(0.7) rotate(-10deg); }
+.random-missile:nth-child(1) { top: 10%; left: 100vw; animation-delay: 0s; }
+.random-missile:nth-child(4) { top: 80%; left: 100vw; animation-delay: 3s; }
+.random-missile:nth-child(2) { top: 30%; left: 100vw; animation-delay: 1s; }
+.random-missile:nth-child(3) { top: 60%; left: 100vw; animation-delay: 2s; }
+.random-missile:nth-child(5) { top: 50%; left: 100vw; animation-delay: 4s; }
+.random-interceptor:nth-child(1) { bottom: 10%; left: 0; animation-delay: 0.5s; }
+.random-interceptor:nth-child(2) { bottom: 30%; left: 0; animation-delay: 1.5s; }
+.random-interceptor:nth-child(3) { bottom: 60%; left: 0; animation-delay: 2.5s; }
+.random-interceptor:nth-child(4) { bottom: 80%; left: 0; animation-delay: 3.5s; }
+.random-interceptor:nth-child(5) { bottom: 50%; left: 0; animation-delay: 4.5s; }
+@keyframes missile-move-center {
+    0% { opacity: 0; left: 100vw; transform: scale(0.7) rotate(-10deg); }
     10% { opacity: 1; }
     80% { opacity: 1; }
-    100% { opacity: 0; left: 100vw; transform: scale(1.1) rotate(10deg); }
+    100% { opacity: 0; left: 50vw; transform: scale(1.1) rotate(10deg); }
 }
-@keyframes interceptor-move {
-    0% { opacity: 0; right: 0; transform: scale(0.7) rotate(10deg); }
+@keyframes interceptor-move-center {
+    0% { opacity: 0; left: 0; transform: scale(0.7) rotate(10deg); }
     10% { opacity: 1; }
     80% { opacity: 1; }
-    100% { opacity: 0; right: 100vw; transform: scale(1.1) rotate(-10deg); }
+    100% { opacity: 0; left: 50vw; transform: scale(1.1) rotate(-10deg); }
 }
 
-/* פיצוצים רנדומליים במסלולים מגוונים */
+/* === פיצוצים רנדומליים במסלולים מגוונים === */
 .napr-explosion1, .napr-explosion2, .napr-explosion3, .napr-explosion4, .napr-explosion5 {
+    /* בסיס עיצוב לכל הפיצוצים */
     position: absolute;
     width: 110px;
     height: 110px;
@@ -738,28 +765,226 @@ body {
     border: 2px solid #fff8;
     pointer-events: none;
 }
+/* --- מיקום ותזמון ייחודיים לכל פיצוץ --- */
 .napr-explosion1 {
+    /* זוג 1 */
     top: 10%;
     left: 45vw;
     animation-delay: 2.5s;
 }
 .napr-explosion2 {
+    /* זוג 2 */
     top: 30%;
     left: 50vw;
     animation-delay: 3.5s;
 }
 .napr-explosion3 {
+    /* זוג 3 */
     top: 60%;
     left: 55vw;
     animation-delay: 4.5s;
 }
 .napr-explosion4 {
+    /* זוג 4 */
     top: 80%;
     left: 60vw;
     animation-delay: 5.5s;
 }
 .napr-explosion5 {
+    /* זוג 5 */
     top: 50%;
     left: 52vw;
     animation-delay: 6.5s;
+}
+
+/* === בנייני מגורים במרכז המסך === */
+.buildings {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    z-index: 12;
+}
+.building {
+    width: 32px;
+    position: relative;
+    border-radius: 4px 4px 8px 8px;
+    box-shadow: 0 4px 16px #0008, 0 0 8px #fff2 inset;
+    border: 2px solid #789;
+    margin-bottom: 0;
+    background: linear-gradient(180deg, #e0e0e0 0%, #b0bec5 60%, #607d8b 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+.building.b1 { height: 80px; background: linear-gradient(180deg, #e0e0e0 0%, #b0bec5 60%, #789 100%); }
+.building.b2 { height: 120px; background: linear-gradient(180deg, #f5f5f5 0%, #cfd8dc 60%, #607d8b 100%); }
+.building.b3 { height: 100px; background: linear-gradient(180deg, #e0e0e0 0%, #b0bec5 60%, #90a4ae 100%); }
+.building.b4 { height: 60px; background: linear-gradient(180deg, #e0e0e0 0%, #b0bec5 60%, #789 100%); }
+.building.b5 { height: 140px; background: linear-gradient(180deg, #f5f5f5 0%, #cfd8dc 60%, #607d8b 100%); }
+.building::before {
+    /* גג אדום */
+    content: '';
+    display: block;
+    position: absolute;
+    top: -16px;
+    left: -6px;
+    width: 44px;
+    height: 16px;
+    background: linear-gradient(180deg, #b71c1c 60%, #d32f2f 100%);
+    border-radius: 8px 8px 12px 12px;
+    box-shadow: 0 2px 8px #a00a;
+    z-index: 2;
+}
+.building .windows {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    width: 90%;
+    margin: 0 auto 6px auto;
+    gap: 2px;
+}
+.building .window {
+    width: 7px;
+    height: 12px;
+    background: linear-gradient(180deg, #fff 60%, #90caf9 100%);
+    border-radius: 1.5px;
+    margin: 1px;
+    box-shadow: 0 0 3px #fff8, 0 0 8px #90caf9aa;
+    border: 1px solid #b0bec5;
+    opacity: 0.85;
+}
+.building .window:nth-child(odd) {
+    background: linear-gradient(180deg, #ffe082 60%, #fffde7 100%);
+    box-shadow: 0 0 4px #ffe08299, 0 0 8px #fffde7aa;
+}
+.building .door {
+    width: 12px;
+    height: 18px;
+    background: linear-gradient(180deg, #795548 0%, #4e342e 100%);
+    border-radius: 2px 2px 8px 8px;
+    margin: 0 auto 2px auto;
+    box-shadow: 0 2px 4px #0004;
+    border: 1.5px solid #5d4037;
+}
+.building .door::after {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    background: #fff8;
+    border-radius: 50%;
+    position: absolute;
+    left: 7px;
+    top: 8px;
+}
+
+/* === מטוס קרב ישראלי מציאותי === */
+.fighter-jet {
+    position: absolute;
+    width: 70px;
+    height: 28px;
+    background: none;
+    z-index: 41;
+    animation: jet-fly 7s linear infinite;
+}
+.fighter-jet .jet-body {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 44px;
+    height: 12px;
+    background: linear-gradient(90deg, #b0bec5 0%, #607d8b 100%);
+    border-radius: 8px 16px 8px 16px;
+    box-shadow: 0 2px 8px #0038b8aa, 0 0 8px #fff4 inset;
+    border: 2px solid #0038b8;
+    z-index: 2;
+}
+.fighter-jet .jet-nose {
+    position: absolute;
+    left: 54px;
+    top: 11px;
+    width: 18px;
+    height: 6px;
+    background: linear-gradient(90deg, #b0bec5 0%, #fff 100%);
+    border-radius: 0 8px 8px 0;
+    transform: skewX(-18deg);
+    z-index: 3;
+}
+.fighter-jet .jet-cockpit {
+    position: absolute;
+    left: 32px;
+    top: 7px;
+    width: 12px;
+    height: 8px;
+    background: linear-gradient(180deg, #90caf9 0%, #1565c0 100%);
+    border-radius: 6px 6px 8px 8px;
+    border: 1px solid #0038b8;
+    z-index: 4;
+}
+.fighter-jet .jet-tail {
+    position: absolute;
+    left: 4px;
+    top: 2px;
+    width: 10px;
+    height: 18px;
+    background: linear-gradient(180deg, #b0bec5 0%, #607d8b 100%);
+    border-radius: 8px 8px 12px 12px;
+    border: 2px solid #0038b8;
+    transform: rotate(-18deg);
+    z-index: 2;
+}
+.fighter-jet .jet-wing-left {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    width: 28px;
+    height: 12px;
+    background: linear-gradient(90deg, #b0bec5 0%, #607d8b 100%);
+    border-radius: 12px 24px 8px 16px;
+    transform: rotate(18deg) skewY(8deg);
+    z-index: 1;
+}
+.fighter-jet .jet-wing-right {
+    position: absolute;
+    left: 18px;
+    top: -2px;
+    width: 28px;
+    height: 12px;
+    background: linear-gradient(90deg, #b0bec5 0%, #607d8b 100%);
+    border-radius: 24px 12px 16px 8px;
+    transform: rotate(-18deg) skewY(-8deg);
+    z-index: 1;
+}
+.fighter-jet .jet-flag {
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    width: 14px;
+    height: 8px;
+    background: linear-gradient(180deg, #0038b8 0%, #0038b8 16.67%, #ffffff 16.67%, #ffffff 83.33%, #0038b8 83.33%, #0038b8 100%);
+    border-radius: 1px;
+    border: 1px solid #0038b8;
+    z-index: 5;
+    box-shadow: 0 0 4px #0038b888;
+}
+.fighter-jet .jet-flame {
+    position: absolute;
+    left: -18px;
+    top: 13px;
+    width: 18px;
+    height: 6px;
+    background: linear-gradient(90deg, #fff0, #ffeb3b 40%, #ff9800 80%, #f44336 100%);
+    border-radius: 50%;
+    filter: blur(1px) brightness(1.3);
+    animation: jet-flame 0.12s linear infinite alternate;
+    z-index: 0;
 }
