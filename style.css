@@ -1275,16 +1275,26 @@ body {
 }
 /* --- END: components/radar-system.css --- */
 
+/* Utility classes for DRY and clean code */
+.responsive-container {
+  width: 100% !important;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.responsive-media {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Responsive styles */
 @media (max-width: 900px) {
   body {
     font-size: 1.1em;
     padding: 10px;
   }
-  .container, .main, .content, .header, .footer {
-    width: 100% !important;
-    max-width: 100vw;
-    box-sizing: border-box;
+  .responsive-container {
+    padding: 0 2vw;
   }
 }
 
@@ -1293,15 +1303,8 @@ body {
     font-size: 1em;
     padding: 5px;
   }
-  .container, .main, .content, .header, .footer {
-    width: 100% !important;
-    max-width: 100vw;
-    box-sizing: border-box;
-    padding: 0 2vw;
-  }
-  img, video, iframe {
-    max-width: 100%;
-    height: auto;
+  .responsive-container {
+    padding: 0 1vw;
   }
   h1, h2, h3, h4, h5, h6 {
     word-break: break-word;
@@ -1313,3 +1316,9 @@ html, body {
   min-width: 0;
   overflow-x: hidden;
 }
+
+/* Example usage (add these classes to your HTML elements):
+<div class="responsive-container">
+  <img class="responsive-media" src="...">
+</div>
+*/
