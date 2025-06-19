@@ -723,3 +723,43 @@ body {
     80% { opacity: 1; }
     100% { opacity: 0; right: 100vw; transform: scale(1.1) rotate(-10deg); }
 }
+
+/* פיצוצים רנדומליים במסלולים מגוונים */
+.napr-explosion1, .napr-explosion2, .napr-explosion3, .napr-explosion4, .napr-explosion5 {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, #ffff00 20%, #ff6600 50%, #ff0000 80%, transparent 100%);
+    opacity: 0;
+    animation: explosion 5s linear infinite;
+    z-index: 30;
+    box-shadow: 0 0 60px 20px #ff0a, 0 0 120px 40px #f008;
+    border: 2px solid #fff8;
+    pointer-events: none;
+}
+.napr-explosion1 {
+    top: 10%;
+    left: 45vw;
+    animation-delay: 2.5s;
+}
+.napr-explosion2 {
+    top: 30%;
+    left: 50vw;
+    animation-delay: 3.5s;
+}
+.napr-explosion3 {
+    top: 60%;
+    left: 55vw;
+    animation-delay: 4.5s;
+}
+.napr-explosion4 {
+    top: 80%;
+    left: 60vw;
+    animation-delay: 5.5s;
+}
+.napr-explosion5 {
+    top: 50%;
+    left: 52vw;
+    animation-delay: 6.5s;
+}
