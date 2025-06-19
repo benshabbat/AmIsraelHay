@@ -1,0 +1,543 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 30%, #2c3e50 70%, #34495e 100%);
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* כוכבים ברקע */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite alternate;
+}
+.star:nth-child(1) { width: 2px; height: 2px; top: 15%; left: 20%; animation-delay: 0s; }
+.star:nth-child(2) { width: 1px; height: 1px; top: 25%; left: 70%; animation-delay: 1s; }
+.star:nth-child(3) { width: 3px; height: 3px; top: 10%; left: 80%; animation-delay: 2s; }
+.star:nth-child(4) { width: 1px; height: 1px; top: 35%; left: 30%; animation-delay: 0.5s; }
+.star:nth-child(5) { width: 2px; height: 2px; top: 20%; left: 90%; animation-delay: 1.5s; }
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* קרקע */
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, #2c5530 0%, #1a3d1f 80%, #0a1a0a 100%);
+    box-shadow: 0 -8px 32px 8px #000a inset, 0 0 40px 10px #1a3d1f inset;
+}
+.ground::before {
+    content: '';
+    position: absolute;
+    left: 10%;
+    bottom: 30px;
+    width: 80%;
+    height: 20px;
+    background: repeating-linear-gradient(
+        90deg, #3a5 0 8px, #2c5530 8px 16px, #fff2 16px 18px
+    );
+    opacity: 0.25;
+    border-radius: 10px;
+}
+
+/* מערכת כיפת ברזל */
+.iron-dome-system {
+    position: absolute;
+    bottom: 100px;
+    left: 15%;
+    transform: translateX(-50%);
+}
+
+/* משאית השיגור */
+.launcher-truck {
+    width: 120px;
+    height: 34px;
+    background: linear-gradient(180deg, #4a5d23 0%, #2d3a1a 100%);
+    border-radius: 5px 8px 8px 5px;
+    position: relative;
+    box-shadow: 0 4px 16px 2px #2228, 0 0 8px 2px #0004;
+    border: 2px solid #2d3a1a;
+}
+.launcher-truck::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    background: #888;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #2228;
+    opacity: 0.2;
+}
+
+/* גלגלים */
+.wheel {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #222;
+    border-radius: 50%;
+    bottom: -6px;
+    border: 2px solid #444;
+    box-shadow: 0 2px 8px #000a;
+}
+.wheel::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 4px;
+    height: 4px;
+    background: #eee;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+.wheel:nth-child(1) { left: 15px; }
+.wheel:nth-child(2) { left: 35px; }
+.wheel:nth-child(3) { right: 15px; }
+.wheel:nth-child(4) { right: 35px; }
+
+/* מתקן השיגור */
+.launcher-unit {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    width: 80px;
+    height: 60px;
+    background: linear-gradient(135deg, #556b2f 0%, #4a5d23 100%);
+    border-radius: 5px;
+    box-shadow: 0 6px 16px 2px #222a;
+    border: 2px solid #333;
+    overflow: hidden;
+}
+.launcher-unit::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 60px;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg, #888 0 6px, #333 6px 8px
+    );
+    border-radius: 4px;
+    opacity: 0.7;
+}
+.launcher-unit::after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    width: 44px;
+    height: 28px;
+    background: repeating-linear-gradient(90deg, #bbb 0 4px, #444 4px 8px);
+    border-radius: 3px;
+    opacity: 0.25;
+}
+
+/* רדאר */
+.radar-system {
+    position: absolute;
+    bottom: 95px;
+    left: 50px;
+    width: 20px;
+    height: 15px;
+    background: linear-gradient(180deg, #666 0%, #444 100%);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px #0006;
+}
+.radar-dish {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 8px;
+    border: 2px solid #0f0;
+    background: radial-gradient(ellipse, #00ff00 0%, #008800 70%, transparent 100%);
+    border-radius: 50%;
+    animation: radar-pulse 2s linear infinite;
+    box-shadow: 0 0 8px 2px #0f08;
+}
+.radar-dish::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 2px;
+    background: linear-gradient(90deg, #0f0 60%, transparent 100%);
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: left center;
+    animation: radar-sweep 2s linear infinite;
+    opacity: 0.7;
+}
+@keyframes radar-pulse {
+    0% { box-shadow: 0 0 5px #00ff00; }
+    50% { box-shadow: 0 0 15px #00ff00; }
+    100% { box-shadow: 0 0 5px #00ff00; }
+}
+@keyframes radar-sweep {
+    0% { transform: translate(-50%, -50%) rotate(0deg);}
+    100% { transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+/* טיל יירוט משופר */
+.interceptor-missile {
+    position: absolute;
+    width: 48px;
+    height: 12px;
+    background: linear-gradient(90deg, #e0e0e0 0%, #b0b0b0 80%, #888 100%);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px 2px #222a, 0 0 12px 2px #00f6;
+    border: 1px solid #bbb;
+    top: 70%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: interceptor-launch 6s ease-in-out infinite, missile-shake 0.25s linear infinite;
+    z-index: 10;
+    transition: box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+/* חוד הטיל ימינה */
+.interceptor-missile::before {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 16px solid #cccccc; /* חוד ימינה */
+    filter: drop-shadow(2px 0 4px #fff8);
+}
+
+/* דגל ישראל על הטיל - באמצע הגוף */
+.israeli-flag {
+    position: absolute;
+    width: 20px;
+    height: 12px;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(180deg, #0038b8 0%, #0038b8 16.67%, #ffffff 16.67%, #ffffff 83.33%, #0038b8 83.33%, #0038b8 100%);
+    border-radius: 1px;
+    z-index: 11;
+}
+
+/* להבה של טיל היירוט - מאחור */
+.interceptor-flame {
+    position: absolute;
+    width: 25px;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, #ffaa00, #ff4444);
+    border-radius: 50%;
+    left: -28px; /* בצד שמאל */
+    top: 50%;
+    transform: translateY(-50%);
+    animation: flame-flicker 0.1s linear infinite alternate;
+    filter: blur(1px) brightness(1.2);
+    box-shadow: 0 0 12px 4px #ff0a, 0 0 24px 8px #f008;
+}
+
+@keyframes interceptor-launch {
+    0% {
+        opacity: 0;
+        top: 70%;
+        left: 15%;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    5% {
+        opacity: 1;
+        top: 70%;
+        left: 15%;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    20% {
+        opacity: 1;
+        top: 62%;
+        left: 20%;
+        transform: translate(-50%, -50%) rotate(-10deg);
+    }
+    35% {
+        opacity: 1;
+        top: 55%;
+        left: 30%;
+        transform: translate(-50%, -50%) rotate(-25deg);
+    }
+    50% {
+        opacity: 1;
+        top: 46%;
+        left: 45%;
+        transform: translate(-50%, -50%) rotate(-35deg);
+    }
+    75% {
+        opacity: 1;
+        top: 46%;
+        left: 60%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    76%, 100% {
+        opacity: 0;
+        top: 46%;
+        left: 60%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+@keyframes missile-shake {
+    0%   { transform: translate(-50%, -50%) rotate(0deg); }
+    20%  { transform: translate(-50%, -50%) rotate(-2deg); }
+    40%  { transform: translate(-50%, -50%) rotate(2deg); }
+    60%  { transform: translate(-50%, -50%) rotate(-1deg); }
+    80%  { transform: translate(-50%, -50%) rotate(1deg); }
+    100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+/* טיל איום */
+.threat-missile {
+    position: absolute;
+    width: 50px;
+    height: 12px;
+    background: linear-gradient(270deg, #ff4444 0%, #cc2222 60%, #660000 100%);
+    border-radius: 14px 0 0 14px;
+    top: 20%;
+    right: -60px;
+    animation: threat-approach 6s ease-in-out infinite;
+    z-index: 5;
+}
+.threat-missile::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 12px solid #aa1111;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    left: 100%;
+    top: 0;
+}
+.threat-missile::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 8px;
+    background: linear-gradient(270deg, transparent, #ff6600, #ff2222);
+    border-radius: 50%;
+    left: 100%;
+    top: 2px;
+    animation: flame-flicker 0.1s linear infinite alternate;
+    filter: blur(1px) brightness(1.2);
+    box-shadow: 0 0 10px 2px #ff0a, 0 0 20px 4px #f008;
+}
+@keyframes threat-approach {
+    0% {
+        right: -60px;
+        top: 20%;
+        transform: rotate(-45deg);
+    }
+    25% {
+        right: 20%;
+        top: 30%;
+        transform: rotate(-45deg);
+    }
+    50% {
+        right: 30%;
+        top: 40%;
+        transform: rotate(-45deg);
+    }
+    75% {
+        right: 40%;
+        top: 46%;
+        transform: rotate(-45deg);
+        opacity: 1;
+    }
+    76% {
+        right: 40%;
+        top: 46%;
+        transform: rotate(-45deg);
+        opacity: 0;
+    }
+    100% {
+        right: 40%;
+        top: 46%;
+        transform: rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* פיצוץ יירוט */
+.intercept-explosion {
+    position: absolute;
+    top: 46%;
+    right: 40%;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, #ffff00 20%, #ff6600 50%, #ff0000 80%, transparent 100%);
+    opacity: 0;
+    animation: explosion 6s ease-out infinite;
+    z-index: 15;
+    transform: translate(50%, -50%);
+    box-shadow: 0 0 80px 30px #ff0a, 0 0 160px 60px #f008;
+    border: 2px solid #fff8;
+}
+@keyframes explosion {
+    0%, 74% {
+        opacity: 0;
+        transform: translate(50%, -50%) scale(0);
+    }
+    75% {
+        opacity: 1;
+        transform: translate(50%, -50%) scale(0.5);
+    }
+    78% {
+        opacity: 1;
+        transform: translate(50%, -50%) scale(1.5);
+    }
+    85% {
+        opacity: 0.5;
+        transform: translate(50%, -50%) scale(2.5);
+    }
+    95% {
+        opacity: 0;
+        transform: translate(50%, -50%) scale(3.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(50%, -50%) scale(0);
+    }
+}
+
+/* הודעת עם ישראל חי */
+.am-israel-chai {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 3px 3px 12px #0038b8, 0 0 20px #fff8;
+    opacity: 0;
+    animation: show-message 6s ease-in-out infinite;
+    z-index: 100;
+    background: linear-gradient(45deg, #0038b8, #ffffff, #0038b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+@keyframes show-message {
+    0%, 80% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    85% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    95% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+/* כותרת */
+.title {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    z-index: 100;
+}
+
+/* מידע על המערכת */
+.system-info {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+.status-active {
+    animation: status-pulse 1s linear infinite;
+}
+@keyframes status-pulse {
+    0%, 50% { color: #00ff00; }
+    51%, 100% { color: #88ff88; }
+}
+
+/* טילים רנדומליים */
+.random-missiles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 20;
+}
+.random-missile {
+    position: absolute;
+    width: 36px;
+    height: 8px;
+    background: linear-gradient(90deg, #ff4444 0%, #cc2222 80%, #660000 100%);
+    border-radius: 8px 8px 4px 4px;
+    box-shadow: 0 2px 8px 2px #a00a;
+    border: 1px solid #a00;
+    /* מיקום רנדומלי לכל טיל */
+    animation: random-missile-move 6s linear infinite;
+}
+.random-missile:nth-child(1) {
+    top: 10%; left: 12%; animation-delay: 0s;
+}
+.random-missile:nth-child(2) {
+    top: 30%; left: 70%; animation-delay: 1.2s;
+}
+.random-missile:nth-child(3) {
+    top: 60%; left: 40%; animation-delay: 2.4s;
+}
+.random-missile:nth-child(4) {
+    top: 80%; left: 20%; animation-delay: 3.6s;
+}
+.random-missile:nth-child(5) {
+    top: 50%; left: 85%; animation-delay: 4.8s;
+}
+@keyframes random-missile-move {
+    0% { opacity: 0; transform: scale(0.7) rotate(-10deg); }
+    10% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: scale(1.1) rotate(10deg); }
+}
