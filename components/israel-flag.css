@@ -2,32 +2,52 @@
   width: 48px;
   height: 32px;
   background: #fff;
-  border: 1.5px solid #0057b8;
-  border-radius: 3px;
+  border: 2px solid #0057b8;
+  border-radius: 4px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px #0057b822, 0 0 8px #fff4 inset;
+  overflow: visible;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.israel-flag:hover {
+  box-shadow: 0 6px 24px #0057b8aa, 0 0 16px #fff8 inset;
+  transform: scale(1.07) rotate(-2deg);
+  z-index: 1002;
 }
 .flag-stripe {
-  width: 90%;
+  width: 92%;
   height: 4px;
-  background: #0057b8;
+  background: linear-gradient(90deg, #0057b8 60%, #0038b8 100%);
   border-radius: 2px;
+  margin: 0 auto;
 }
 .flag-stripe-top {
   position: absolute;
-  top: 4px;
+  top: 5px;
 }
 .flag-stripe-bottom {
   position: absolute;
-  bottom: 4px;
+  bottom: 5px;
 }
 .flag-star {
   margin: 0 auto;
   z-index: 2;
   position: relative;
   top: 2px;
+  filter: drop-shadow(0 0 2px #0057b8cc);
+}
+.flag-star svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+.flag-star polygon {
+  stroke: #0057b8;
+  stroke-width: 2.2;
+  fill: none;
+  filter: drop-shadow(0 0 1.5px #0057b8cc);
 }
