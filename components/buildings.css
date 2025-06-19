@@ -1,3 +1,5 @@
+/* ודא שאין חפיפות עם style.css - כל חוקי הבניינים, חלונות, דלתות, דגלים, גג אדום, וכו' יופיעו רק כאן */
+
 /* בניינים - עיצוב משופר */
 .buildings {
     position: absolute;
@@ -9,115 +11,129 @@
     display: flex;
     align-items: flex-end;
     gap: 18px;
-    z-index: 12;
+    z-index: 20;
     filter: drop-shadow(0 8px 24px #0006);
 }
 .building {
-    width: 36px;
+    width: 40px;
+    min-height: 80px;
+    max-height: 170px;
     position: relative;
-    border-radius: 6px 6px 12px 12px;
-    box-shadow: 0 6px 20px #000a, 0 0 12px #fff3 inset;
-    border: 2.5px solid #789;
+    border-radius: 10px 10px 18px 18px;
+    box-shadow: 0 10px 32px #0038b8aa, 0 0 20px #fff6 inset, 0 0 0 2px #fff2 inset;
+    border: 2.5px solid #607d8b;
     margin-bottom: 0;
-    background: linear-gradient(180deg, #f5f5f5 0%, #b0bec5 60%, #607d8b 100%);
+    background: linear-gradient(180deg, #f5f5f5 0%, #e3eaf0 20%, #b0bec5 60%, #607d8b 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    overflow: hidden;
-    transition: box-shadow 0.3s, transform 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+    z-index: 21;
+    filter: drop-shadow(0 2px 8px #0038b822);
+    animation: building-fadein 1.2s cubic-bezier(.42,0,.58,1) both;
+}
+@keyframes building-fadein {
+    0% { opacity: 0; transform: scale(0.8) translateY(40px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 .building:hover {
-    box-shadow: 0 12px 32px #0038b8cc, 0 0 24px #fff8 inset;
-    transform: scale(1.04) translateY(-4px);
-    z-index: 20;
+    box-shadow: 0 18px 48px #0038b8cc, 0 0 36px #fff8 inset, 0 0 0 3px #0057b8;
+    transform: scale(1.08) translateY(-10px) rotate(-1deg);
+    background: linear-gradient(180deg, #e3f2fd 0%, #b3c6d6 40%, #789 100%);
+    border-color: #0057b8;
+    filter: brightness(1.12) drop-shadow(0 6px 18px #0038b855);
 }
-.building.b1 { height: 90px; background: linear-gradient(180deg, #e0e0e0 0%, #b0bec5 60%, #789 100%); }
-.building.b2 { height: 130px; background: linear-gradient(180deg, #f5f5f5 0%, #cfd8dc 60%, #607d8b 100%); }
-.building.b3 { height: 110px; background: linear-gradient(180deg, #e0e0e0 0%, #b0bec5 60%, #90a4ae 100%); }
-.building.b4 { height: 70px; background: linear-gradient(180deg, #e0e0e0 0%, #b0bec5 60%, #789 100%); }
-.building.b5 { height: 150px; background: linear-gradient(180deg, #f5f5f5 0%, #cfd8dc 60%, #607d8b 100%); }
-.building::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -18px;
-    left: -7px;
-    width: 50px;
-    height: 18px;
-    background: linear-gradient(180deg, #b71c1c 60%, #d32f2f 100%);
-    border-radius: 10px 10px 16px 16px;
-    box-shadow: 0 4px 12px #a00a;
-    z-index: 2;
-}
+.building.b1 { height: 100px; background: linear-gradient(180deg, #e0e0e0 0%, #b0bec5 60%, #789 100%); }
+.building.b2 { height: 140px; background: linear-gradient(180deg, #f5f5f5 0%, #cfd8dc 60%, #607d8b 100%); }
+.building.b3 { height: 120px; background: linear-gradient(180deg, #e0e0e0 0%, #b0bec5 60%, #90a4ae 100%); }
+.building.b4 { height: 90px; background: linear-gradient(180deg, #e0e0e0 0%, #b0bec5 60%, #789 100%); }
+.building.b5 { height: 160px; background: linear-gradient(180deg, #f5f5f5 0%, #cfd8dc 60%, #607d8b 100%); }
+
 .building .windows {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-end;
-    width: 90%;
-    margin: 0 auto 8px auto;
-    gap: 3px;
+    width: 94%;
+    margin: 0 auto 12px auto;
+    gap: 5px 3px;
+    position: static;
+    bottom: unset;
+    left: unset;
+    transform: unset;
+    z-index: unset;
+    margin-bottom: 8px;
+    overflow: hidden; /* רק החלונות חותכים את התוכן הפנימי שלהן */
 }
 .building .window {
-    width: 8px;
-    height: 14px;
+    width: 11px;
+    height: 18px;
     background: linear-gradient(180deg, #fff 60%, #90caf9 100%);
-    border-radius: 2px;
-    margin: 2px;
-    box-shadow: 0 0 4px #fff8, 0 0 10px #90caf9aa;
-    border: 1.2px solid #b0bec5;
-    opacity: 0.92;
-    transition: background 0.2s;
+    border-radius: 4px;
+    margin: 2px 1px;
+    box-shadow: 0 0 8px #fff8, 0 0 16px #90caf9aa;
+    border: 1.5px solid #b0bec5;
+    opacity: 0.98;
+    transition: background 0.2s, box-shadow 0.2s, filter 0.2s;
+    filter: brightness(1.12);
 }
 .building .window:nth-child(odd) {
     background: linear-gradient(180deg, #ffe082 60%, #fffde7 100%);
-    box-shadow: 0 0 6px #ffe08299, 0 0 12px #fffde7aa;
+    box-shadow: 0 0 10px #ffe08299, 0 0 20px #fffde7aa;
 }
 .building .window:hover {
     background: linear-gradient(180deg, #fffde7 0%, #ffe082 100%);
+    box-shadow: 0 0 20px #fffde7, 0 0 32px #ffe082;
+    filter: brightness(1.25) drop-shadow(0 0 8px #fffbe7);
 }
+
 .building .door {
-    width: 14px;
-    height: 20px;
+    width: 18px;
+    height: 26px;
     background: linear-gradient(180deg, #795548 0%, #4e342e 100%);
-    border-radius: 3px 3px 10px 10px;
-    margin: 0 auto 3px auto;
-    box-shadow: 0 3px 8px #0004;
-    border: 2px solid #5d4037;
+    border-radius: 6px 6px 14px 14px;
+    margin: 0 auto 8px auto;
+    box-shadow: 0 6px 16px #0005, 0 0 0 2px #fff3 inset;
+    border: 2.5px solid #5d4037;
     position: relative;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    z-index: 3;
 }
 .building .door::after {
     content: '';
     display: block;
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     background: #fff8;
     border-radius: 50%;
     position: absolute;
-    left: 8px;
-    top: 9px;
+    left: 10px;
+    top: 12px;
+    box-shadow: 0 0 6px #fff8;
 }
-.building .building-flag {
-    width: 16px;
-    height: 9px;
-    background: linear-gradient(180deg, #0038b8 0%, #0038b8 16.67%, #ffffff 16.67%, #ffffff 83.33%, #0038b8 83.33%, #0038b8 100%);
-    border-radius: 2px;
-    border: 1.2px solid #0038b8;
-    margin: 3px auto 0 auto;
-    box-shadow: 0 0 6px #0038b888;
-    position: relative;
-    z-index: 10;
+.building .door:hover {
+    box-shadow: 0 10px 32px #ffeb3b88, 0 0 0 2px #fff8 inset;
+    border-color: #ffeb3b;
 }
-.building .building-flag::after {
-    content: '';
-    display: block;
+
+/* דגל ישראל מתעופף מעל הבניינים - גרסה עם קומפוננטה */
+.flying-israel-flag {
     position: absolute;
-    left: 5px;
-    top: 3px;
-    width: 7px;
-    height: 3.5px;
-    border: 1.2px solid #0038b8;
-    border-radius: 2.5px;
-    opacity: 0.7;
+    left: 50%;
+    top: -38px; /* מעט נמוך יותר, אך לא ייחתך */
+    transform: translateX(-50%);
+    z-index: 1000 !important; /* גבוה יותר מהבניין */
+    animation: flag-float 3.5s ease-in-out infinite alternate;
+    width: 48px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+@keyframes flag-float {
+    0%   { top: -38px; transform: translateX(-50%) rotate(-6deg) scale(1.05); }
+    50%  { top: -54px; transform: translateX(-50%) rotate(7deg) scale(1.13); }
+    100% { top: -38px; transform: translateX(-50%) rotate(-6deg) scale(1.05); }
 }
