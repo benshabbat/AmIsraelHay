@@ -832,3 +832,484 @@ body {
     61% { left: 54vw; top: 45vh; transform: rotate(270deg) scale(1.12); opacity: 0; }
     100% { left: 54vw; top: 45vh; transform: rotate(270deg) scale(1.12); opacity: 0; }
 }
+
+/* --- START: components/iron-dome-system.css --- */
+/* מערכת כיפת ברזל - עיצוב משופר */
+.iron-dome-system {
+    position: absolute;
+    bottom: 90px;
+    left: 18%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 140px;
+    z-index: 10;
+    box-shadow: 0 12px 36px 8px #0038b855, 0 0 32px 8px #fff4 inset;
+    border-radius: 22px 22px 32px 32px;
+    background: linear-gradient(160deg, #e3eaf0 0%, #b0bec5 60%, #607d8b 100%);
+    border: 3px solid #0057b8;
+    filter: drop-shadow(0 8px 32px #0038b822) brightness(1.04);
+    transition: box-shadow 0.3s, filter 0.3s, background 0.3s;
+    animation: iron-dome-fadein 1.2s cubic-bezier(.42,0,.58,1) both;
+}
+.iron-dome-system:hover {
+    box-shadow: 0 24px 64px 16px #0038b8aa, 0 0 48px 12px #fff8 inset;
+    filter: brightness(1.10) drop-shadow(0 12px 36px #0038b8cc);
+    background: linear-gradient(160deg, #e3f2fd 0%, #b3c6d6 60%, #789 100%);
+    border-color: #0038b8;
+}
+@keyframes iron-dome-fadein {
+    0% { opacity: 0; transform: scale(0.8) translateY(40px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+/* קישוטים קטנים */
+.iron-dome-system::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #b0bec5 60%, #607d8b 100%);
+    box-shadow: 0 0 8px #0038b822;
+    opacity: 0.18;
+    z-index: 1;
+}
+.iron-dome-system::after {
+    content: '';
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #607d8b 60%, #0038b8 100%);
+    box-shadow: 0 0 8px #0038b822;
+    opacity: 0.13;
+    z-index: 1;
+}
+/* --- END: components/iron-dome-system.css --- */
+
+/* --- START: components/israel-flag.css --- */
+.israel-flag {
+  width: 48px;
+  height: 32px;
+  background: #fff;
+  border: 2px solid #0057b8;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #0057b822, 0 0 8px #fff4 inset;
+  overflow: visible;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.israel-flag:hover {
+  box-shadow: 0 6px 24px #0057b8aa, 0 0 16px #fff8 inset;
+  transform: scale(1.07) rotate(-2deg);
+  z-index: 1002;
+}
+.flag-stripe {
+  width: 92%;
+  height: 4px;
+  background: linear-gradient(90deg, #0057b8 60%, #0038b8 100%);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+.flag-stripe-top {
+  position: absolute;
+  top: 5px;
+}
+.flag-stripe-bottom {
+  position: absolute;
+  bottom: 5px;
+}
+.flag-star {
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  top: 2px;
+  filter: drop-shadow(0 0 2px #0057b8cc);
+}
+.flag-star svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+.flag-star polygon {
+  stroke: #0057b8;
+  stroke-width: 2.2;
+  fill: none;
+  filter: drop-shadow(0 0 1.5px #0057b8cc);
+}
+
+/* דגל ישראל קטן לטיל יירוט ולמטוס */
+.israeli-flag {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 14px;
+    background: #fff;
+    border: 1.5px solid #0057b8;
+    border-radius: 2px;
+    box-shadow: 0 0 4px #fff, 0 0 8px #0057b844;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.israeli-flag .flag-stripe {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #0057b8;
+}
+.israeli-flag .flag-stripe-top { top: 2px; }
+.israeli-flag .flag-stripe-bottom { bottom: 2px; }
+.israeli-flag .flag-star {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.israeli-flag .flag-star svg {
+    width: 14px;
+    height: 14px;
+}
+/* --- END: components/israel-flag.css --- */
+
+/* --- START: components/launcher-truck.css --- */
+/* משאית משופרת */
+.launcher-truck {
+    width: 130px;
+    height: 28px;
+    background: linear-gradient(180deg, #23272b 0%, #181a1c 100%);
+    border-radius: 8px 8px 12px 12px;
+    border: 2.5px solid #181a1c;
+    box-shadow: 0 6px 18px 2px #222a, 0 0 12px 2px #0008;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.launcher-truck::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 38px;
+    height: 28px;
+    background: linear-gradient(180deg, #2d3a4a 0%, #1a232c 100%);
+    border-radius: 8px 0 10px 12px;
+    border-right: 2.5px solid #222;
+    box-shadow: 2px 0 10px #0008;
+}
+.truck-flag {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 18px;
+    height: 12px;
+    border-radius: 2px;
+    border: 1.5px solid #1a237e;
+    box-shadow: 0 0 3px #1a237e;
+    background: linear-gradient(180deg, #fff 0 100%);
+    z-index: 4;
+}
+.truck-flag::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    width: 14px;
+    height: 2px;
+    background: #1565c0;
+}
+.truck-flag::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2.5px;
+    width: 5px;
+    height: 7px;
+    border: 1px solid #1565c0;
+    border-radius: 50%;
+}
+.truck-bumper {
+    position: absolute;
+    left: -12px;
+    bottom: 5px;
+    width: 20px;
+    height: 8px;
+    background: #333;
+    border-radius: 2px 7px 7px 2px;
+    border: 1.5px solid #222;
+    box-shadow: 0 2px 4px #000a;
+}
+.truck-steps {
+    position: absolute;
+    left: 7px;
+    bottom: 1px;
+    width: 10px;
+    height: 12px;
+    background: repeating-linear-gradient(
+        to top, #bbb 0 2px, transparent 2px 4px
+    );
+    border-radius: 2px;
+    border: 1px solid #888;
+    opacity: 0.85;
+}
+.truck-lights {
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ffe600 60%, #ffb300 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px 3px #ffe60099;
+    border: 1.5px solid #bfa600;
+    z-index: 6;
+}
+
+/* גלגלים */
+.wheel {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #181a1c;
+    border: 4px solid #444;
+    box-shadow: 0 3px 12px #000c, 0 0 0 6px #222b inset;
+}
+.wheel::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 6px;
+    height: 6px;
+    background: #eee;
+    border: 1.5px solid #bbb;
+    opacity: 0.8;
+}
+
+/* מתקן השיגור - דמוי ישראלי */
+.launcher-unit {
+    position: absolute;
+    left: 92px;
+    bottom: 28px;
+    width: 40px;
+    height: 66px;
+    background: linear-gradient(120deg, #bdbdbd 0%, #888 100%);
+    border-radius: 5px;
+    border: 2.5px solid #444;
+    box-shadow: 0 6px 18px 2px #2228;
+    transform: rotate(-14deg);
+}
+.launcher-unit::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    width: 28px;
+    height: 48px;
+    background: repeating-linear-gradient(90deg, #e0e0e0 0 5px, #888 5px 10px);
+    border-radius: 2.5px;
+    opacity: 0.85;
+    border: 1.5px solid #aaa;
+}
+.launcher-cassettes {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    position: absolute;
+    left: 8px;
+    top: 12px;
+}
+/* טילים מציאותיים על המשגר */
+.cassette {
+    position: relative;
+    width: 30px;
+    height: 12px;
+    background: linear-gradient(90deg, #e0e0e0 0%, #b0bec5 60%, #607d8b 100%);
+    border: 2.5px solid #607d8b;
+    border-radius: 4px 10px 10px 4px;
+    box-shadow: 0 2px 8px #0038b855, 0 0 8px #fff4 inset, 2px 0 8px #1565c055 inset;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.2s, filter 0.2s;
+    z-index: 2;
+    overflow: visible;
+}
+.cassette:hover {
+    box-shadow: 0 6px 18px #0038b8cc, 0 0 16px #fff8 inset;
+    filter: brightness(1.12);
+}
+.cassette .missile-tip {
+    position: absolute;
+    right: -7px;
+    top: 2px;
+    width: 10px;
+    height: 8px;
+    background: linear-gradient(90deg, #1565c0 0%, #fff 100%);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    border-radius: 2px 10px 10px 2px;
+    box-shadow: 2px 0 8px #1565c088, 0 0 6px #fff8 inset;
+    border: 1.5px solid #1565c0;
+}
+.cassette .missile-stripe {
+    position: absolute;
+    left: 7px;
+    top: 4px;
+    width: 13px;
+    height: 2.5px;
+    background: linear-gradient(90deg, #0057b8 60%, #90caf9 100%);
+    border-radius: 2px;
+    opacity: 0.8;
+    z-index: 4;
+    box-shadow: 0 0 4px #0057b8cc;
+}
+.cassette .missile-shadow {
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 5px;
+    background: radial-gradient(ellipse at center, #0038b822 60%, transparent 100%);
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.6;
+}
+.cassette .missile-details {
+    position: absolute;
+    left: 14px;
+    top: 2.5px;
+    width: 7px;
+    height: 7px;
+    background: radial-gradient(circle, #fff 60%, #b0bec5 100%);
+    border-radius: 50%;
+    opacity: 0.7;
+    box-shadow: 0 0 4px #fff8;
+    z-index: 5;
+}
+.cassette .missile-serial {
+    position: absolute;
+    left: 3px;
+    top: 7px;
+    font-size: 7px;
+    color: #607d8b;
+    font-family: 'Courier New', monospace;
+    opacity: 0.7;
+    z-index: 6;
+    pointer-events: none;
+}
+/* --- END: components/launcher-unit.css --- */
+
+/* --- START: components/radar-system.css --- */
+/* רדאר דמוי EL/M-2084 */
+.radar-system {
+    position: absolute;
+    left: -16px;
+    bottom: 70px;
+    width: 40px;
+    height: 28px;
+    background: linear-gradient(180deg, #bdbdbd 0%, #888 100%);
+    border-radius: 4px 4px 8px 8px;
+    border: 2.5px solid #444;
+    box-shadow: 0 3px 12px #0006;
+    z-index: 4;
+}
+.radar-frame {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 36px;
+    height: 22px;
+    border: 3px solid #263238;
+    border-radius: 5px;
+    background: #2223;
+}
+.radar-dish {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 20px;
+    height: 12px;
+    background: #b0bec5;
+    border-radius: 4px 4px 8px 8px/8px 8px 12px 12px;
+    border: 2px solid #607d8b;
+    z-index: 2;
+    animation: radar-pulse 2s linear infinite;
+}
+.radar-dish::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 14px;
+    height: 2.5px;
+    background: linear-gradient(90deg, #0f0 60%, transparent 100%);
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: left center;
+    animation: radar-sweep 2s linear infinite;
+    opacity: 0.7;
+}
+@keyframes radar-pulse {
+    0% { box-shadow: 0 0 5px #00ff00; }
+    50% { box-shadow: 0 0 15px #00ff00; }
+    100% { box-shadow: 0 0 5px #00ff00; }
+}
+@keyframes radar-sweep {
+    0% { transform: translate(-50%, -50%) rotate(0deg);}
+    100% { transform: translate(-50%, -50%) rotate(360deg);}
+}
+/* --- END: components/radar-system.css --- */
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  body {
+    font-size: 1.1em;
+    padding: 10px;
+  }
+  .container, .main, .content, .header, .footer {
+    width: 100% !important;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1em;
+    padding: 5px;
+  }
+  .container, .main, .content, .header, .footer {
+    width: 100% !important;
+    max-width: 100vw;
+    box-sizing: border-box;
+    padding: 0 2vw;
+  }
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+  }
+}
+
+/* For CodePen preview */
+html, body {
+  min-width: 0;
+  overflow-x: hidden;
+}
