@@ -47,13 +47,11 @@
 }
 
 @keyframes interceptor-launch-from-dome {
-    0% { opacity: 0; bottom: calc(90px + 28px + 12px + 6px); left: calc(18% + 92px + 8px + 15px); transform: translate(-50%, 0) rotate(-14deg); }
-    5% { opacity: 1; bottom: calc(90px + 28px + 12px + 6px); left: calc(18% + 92px + 8px + 15px); transform: translate(-50%, 0) rotate(-14deg); }
-    20% { opacity: 1; bottom: 62%; left: 20%; transform: translate(-50%, -50%) rotate(-10deg); }
-    35% { opacity: 1; bottom: 70%; left: 30%; transform: translate(-50%, -50%) rotate(-25deg); }
-    50% { opacity: 1; bottom: 80%; left: 45%; transform: translate(-50%, -50%) rotate(-35deg); }
-    75% { opacity: 1; bottom: 90%; left: 60%; transform: translate(-50%, -50%) rotate(-45deg); }
-    76%, 100% { opacity: 0; bottom: 90%; left: 60%; transform: translate(-50%, -50%) rotate(-45deg); }
+    0% { left: 18.5vw; bottom: 120px; transform: rotate(-14deg); opacity: 0; }
+    5% { left: 18.5vw; bottom: 120px; transform: rotate(-14deg); opacity: 1; }
+    60% { left: 54vw; bottom: 45vh; transform: rotate(-45deg); opacity: 1; } /* נקודת התנגשות */
+    61% { left: 54vw; bottom: 45vh; transform: rotate(-45deg); opacity: 0; }
+    100% { left: 54vw; bottom: 45vh; transform: rotate(-45deg); opacity: 0; }
 }
 @keyframes missile-shake {
     0%   { transform: translate(-50%, -50%) rotate(0deg); }

@@ -39,10 +39,10 @@
     box-shadow: 0 0 10px 2px #ff0a, 0 0 20px 4px #f008;
 }
 @keyframes threat-approach {
-    0% { left: 60vw; top: -60px; transform: rotate(90deg); opacity: 1; }
-    60% { left: 60vw; top: 45vh; transform: rotate(90deg); opacity: 1; } /* נקודת התנגשות */
-    61% { left: 60vw; top: 45vh; transform: rotate(90deg); opacity: 0; }
-    100% { left: 60vw; top: 45vh; transform: rotate(90deg); opacity: 0; }
+    0% { left: 54vw; top: -60px; transform: rotate(90deg); opacity: 1; }
+    60% { left: 54vw; top: 45vh; transform: rotate(90deg); opacity: 1; } /* נקודת התנגשות */
+    61% { left: 54vw; top: 45vh; transform: rotate(90deg); opacity: 0; }
+    100% { left: 54vw; top: 45vh; transform: rotate(90deg); opacity: 0; }
 }
 @keyframes flame-flicker {
     0% { filter: brightness(1.2); }
