@@ -1,297 +1,498 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>כיפת ברזל</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="am-israel-enhancement.css" />
+    <link rel="stylesheet" href="iron-dome-fix.css" />
+    <link rel="stylesheet" href="missile-animations.css" />
+    <link rel="stylesheet" href="missile-fixes.css" />
+    <link rel="stylesheet" href="random-missiles.css" />    <link rel="stylesheet" href="fighter-jets.css" />
+    <link rel="stylesheet" href="buildings.css" />
+    <link rel="stylesheet" href="enhanced-missile-effects.css" />
+    <link rel="stylesheet" href="enhanced-animations.css" />
+    <link rel="stylesheet" href="enhanced-random-missiles.css" />
+  </head>
+  <body>
     <div class="title">כיפת ברזל - מערכת הגנה אווירית</div>
     <div class="stars">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
     </div>
     <div class="ground"></div>
     <div class="iron-dome-system">
-        <div class="launcher-truck">
-            <div class="wheel"></div>
-            <div class="wheel"></div>
-            <div class="wheel"></div>
-            <div class="wheel"></div>
-            <div class="truck-bumper"></div>
-            <div class="truck-steps"></div>
+      <div class="launcher-truck">
+        <div class="wheel"></div>
+        <div class="wheel"></div>
+        <div class="wheel"></div>
+        <div class="wheel"></div>
+        <div class="truck-bumper"></div>
+        <div class="truck-steps"></div>
+      </div>
+      <div class="launcher-unit">
+        <div class="launcher-cassettes">
+          <div class="cassette"></div>
+          <div class="cassette"></div>
+          <div class="cassette"></div>
+          <div class="cassette"></div>
         </div>
-        <div class="launcher-unit">
-            <div class="launcher-cassettes">
-                <div class="cassette"></div>
-                <div class="cassette"></div>
-                <div class="cassette"></div>
-                <div class="cassette"></div>
-            </div>
-        </div>
-        <div class="radar-system">
-            <div class="radar-frame"></div>
-            <div class="radar-dish"></div>
-        </div>
+      </div>
+      <div class="radar-system">
+        <div class="radar-frame"></div>
+        <div class="radar-dish"></div>
+      </div>
     </div>
     <div class="interceptor-missile">
-        <div class="israeli-flag">
-          <div class="flag-stripe flag-stripe-top"></div>
-          <div class="flag-star">
-            <svg viewBox="0 0 40 40" width="14" height="14">
-              <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-              <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <div class="flag-stripe flag-stripe-bottom"></div>
+      <div class="israeli-flag">
+        <div class="flag-stripe flag-stripe-top"></div>
+        <div class="flag-star">
+          <svg viewBox="0 0 40 40" width="14" height="14">
+            <polygon
+              points="20,8 28,24 12,24"
+              fill="none"
+              stroke="#0057b8"
+              stroke-width="2.5"
+            />
+            <polygon
+              points="20,32 12,16 28,16"
+              fill="none"
+              stroke="#0057b8"
+              stroke-width="2.5"
+            />
+          </svg>
         </div>
-        <div class="interceptor-flame"></div>
+        <div class="flag-stripe flag-stripe-bottom"></div>
+      </div>
+      <div class="interceptor-flame"></div>
+      <div class="interceptor-missile-trail"></div>
     </div>
     <div class="threat-missile"></div>
     <div class="interceptor-missile">
-        <div class="israeli-flag">
-          <div class="flag-stripe flag-stripe-top"></div>
-          <div class="flag-star">
-            <svg viewBox="0 0 40 40" width="14" height="14">
-              <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-              <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <div class="flag-stripe flag-stripe-bottom"></div>
+      <div class="israeli-flag">
+        <div class="flag-stripe flag-stripe-top"></div>
+        <div class="flag-star">
+          <svg viewBox="0 0 40 40" width="14" height="14">
+            <polygon
+              points="20,8 28,24 12,24"
+              fill="none"
+              stroke="#0057b8"
+              stroke-width="2.5"
+            />
+            <polygon
+              points="20,32 12,16 28,16"
+              fill="none"
+              stroke="#0057b8"
+              stroke-width="2.5"
+            />
+          </svg>
         </div>
-        <div class="interceptor-flame"></div>
+        <div class="flag-stripe flag-stripe-bottom"></div>
+      </div>
+      <div class="interceptor-flame"></div>
+      <div class="interceptor-missile-trail"></div>
     </div>
     <div class="threat-missile"></div>
     <div class="interceptor-missile">
-        <div class="israeli-flag">
-          <div class="flag-stripe flag-stripe-top"></div>
-          <div class="flag-star">
-            <svg viewBox="0 0 40 40" width="14" height="14">
-              <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-              <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <div class="flag-stripe flag-stripe-bottom"></div>
+      <div class="israeli-flag">
+        <div class="flag-stripe flag-stripe-top"></div>
+        <div class="flag-star">
+          <svg viewBox="0 0 40 40" width="14" height="14">
+            <polygon
+              points="20,8 28,24 12,24"
+              fill="none"
+              stroke="#0057b8"
+              stroke-width="2.5"
+            />
+            <polygon
+              points="20,32 12,16 28,16"
+              fill="none"
+              stroke="#0057b8"
+              stroke-width="2.5"
+            />
+          </svg>
         </div>
-        <div class="interceptor-flame"></div>
+        <div class="flag-stripe flag-stripe-bottom"></div>
+      </div>
+      <div class="interceptor-flame"></div>
+      <div class="interceptor-missile-trail"></div>
+    </div>    <div class="threat-missile missile-alt1">
+      <div class="threat-missile-trail"></div>
     </div>
-    <div class="threat-missile missile-alt1"></div>
     <div class="intercept-explosion alt1"></div>
+    <div class="shockwave shockwave-1 alt1"></div>
+    <div class="shockwave shockwave-2 alt1"></div>
+    <div class="explosion-debris debris-1 alt1" style="--x: 80px; --y: -60px;"></div>
+    <div class="explosion-debris debris-2 alt1" style="--x: -70px; --y: -40px;"></div>
+    <div class="explosion-debris debris-3 alt1" style="--x: 50px; --y: 65px;"></div>
+    <div class="am-israel-text alt1">עם ישראל חי</div>
     <div class="interceptor-missile missile-alt2">
-        <div class="israeli-flag">
-          <div class="flag-stripe flag-stripe-top"></div>
-          <div class="flag-star">
-            <svg viewBox="0 0 40 40" width="14" height="14">
-              <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-              <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <div class="flag-stripe flag-stripe-bottom"></div>
+      <div class="israeli-flag">
+        <div class="flag-stripe flag-stripe-top"></div>
+        <div class="flag-star">
+          <svg viewBox="0 0 40 40" width="14" height="14">
+            <polygon
+              points="20,8 28,24 12,24"
+              fill="none"
+              stroke="#0057b8"
+              stroke-width="2.5"
+            />
+            <polygon
+              points="20,32 12,16 28,16"
+              fill="none"
+              stroke="#0057b8"
+              stroke-width="2.5"
+            />
+          </svg>
         </div>
-        <div class="interceptor-flame"></div>
+        <div class="flag-stripe flag-stripe-bottom"></div>
+      </div>
+      <div class="interceptor-flame"></div>
+      <div class="interceptor-missile-trail"></div>
+    </div>    <div class="threat-missile missile-alt2">
+      <div class="threat-missile-trail"></div>
     </div>
-    <div class="threat-missile missile-alt2"></div>
     <div class="intercept-explosion alt2"></div>
+    <div class="shockwave shockwave-1 alt2"></div>
+    <div class="shockwave shockwave-2 alt2"></div>
+    <div class="explosion-debris debris-1 alt2" style="--x: 90px; --y: -50px;"></div>
+    <div class="explosion-debris debris-2 alt2" style="--x: -60px; --y: -55px;"></div>
+    <div class="explosion-debris debris-3 alt2" style="--x: 40px; --y: 70px;"></div>
+    <div class="am-israel-text alt2">עם ישראל חי</div>
     <div class="interceptor-missile missile-alt3">
-        <div class="israeli-flag">
-          <div class="flag-stripe flag-stripe-top"></div>
-          <div class="flag-star">
-            <svg viewBox="0 0 40 40" width="14" height="14">
-              <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-              <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <div class="flag-stripe flag-stripe-bottom"></div>
-        </div>
-        <div class="interceptor-flame"></div>
+      <div class="israeli-flag">
+        <div class="flag-stripe flag-stripe-top"></div>
+        <div class="flag-star">
+          <svg viewBox="0 0 40 40" width="14" height="14">
+            <polygon
+              points="20,8 28,24 12,24"
+              fill="none"
+              stroke="#0057b8"
+              stroke-width="2.5"
+            />
+            <polygon
+              points="20,32 12,16 28,16"
+              fill="none"
+              stroke="#0057b8"
+              stroke-width="2.5"
+            />
+          </svg>
+        </div>        <div class="flag-stripe flag-stripe-bottom"></div>
+      </div>
+      <div class="interceptor-flame"></div>
+      <div class="interceptor-missile-trail"></div>
+    </div>    <div class="threat-missile missile-alt3">
+      <div class="threat-missile-trail"></div>
     </div>
-    <div class="threat-missile missile-alt3"></div>
     <div class="intercept-explosion alt3"></div>
+    <div class="shockwave shockwave-1 alt3"></div>
+    <div class="shockwave shockwave-2 alt3"></div>
+    <div class="explosion-debris debris-1 alt3" style="--x: 75px; --y: -65px;"></div>
+    <div class="explosion-debris debris-2 alt3" style="--x: -80px; --y: -45px;"></div>
+    <div class="explosion-debris debris-3 alt3" style="--x: 60px; --y: 55px;"></div>
+    <div class="am-israel-text alt3">עם ישראל חי</div>
     <div class="intercept-explosion main-explosion"></div>
-    <div class="am-israel-chai">עם ישראל חי!</div>
-    <div class="random-missiles">
-        <div class="random-missile"></div>
-        <div class="random-interceptor"></div>
-        <div class="napr-explosion1"></div>
-        <div class="random-missile"></div>
-        <div class="random-interceptor"></div>
-        <div class="napr-explosion2"></div>
-        <div class="random-missile"></div>
-        <div class="random-interceptor"></div>
-        <div class="napr-explosion3"></div>
-        <div class="random-missile"></div>
-        <div class="random-interceptor"></div>
-        <div class="napr-explosion4"></div>
-        <div class="random-missile"></div>
-        <div class="random-interceptor"></div>
-        <div class="napr-explosion5"></div>
+    <div class="shockwave"></div>
+    <div class="shockwave secondary"></div>
+    <div class="debris-container">
+      <div class="debris" style="--x-offset: 50px; --y-offset: 120px; --rotation: 45deg;"></div>
+      <div class="debris" style="--x-offset: -70px; --y-offset: 90px; --rotation: -65deg;"></div>
+      <div class="debris" style="--x-offset: 100px; --y-offset: 70px; --rotation: 120deg;"></div>
+      <div class="debris" style="--x-offset: -40px; --y-offset: 150px; --rotation: -20deg;"></div>
+      <div class="debris" style="--x-offset: 80px; --y-offset: 100px; --rotation: 90deg;"></div>
+      <div class="debris" style="--x-offset: -90px; --y-offset: 130px; --rotation: -120deg;"></div>
+      <div class="debris" style="--x-offset: 60px; --y-offset: 160px; --rotation: 75deg;"></div>
+      <div class="debris" style="--x-offset: -120px; --y-offset: 80px; --rotation: -90deg;"></div>
+      <div class="debris" style="--x-offset: 110px; --y-offset: 140px; --rotation: 60deg;"></div>
+      <div class="debris" style="--x-offset: -60px; --y-offset: 170px; --rotation: -40deg;"></div>
+      <div class="debris" style="--x-offset: 85px; --y-offset: 95px; --rotation: 110deg;"></div>
+      <div class="debris" style="--x-offset: -130px; --y-offset: 60px; --rotation: -95deg;"></div>
+      <div class="debris" style="--x-offset: 75px; --y-offset: 180px; --rotation: 30deg;"></div>
+      <div class="debris" style="--x-offset: -110px; --y-offset: 120px; --rotation: -130deg;"></div>
+      <div class="debris" style="--x-offset: 140px; --y-offset: 80px; --rotation: 80deg;"></div>
+      <div class="debris" style="--x-offset: -95px; --y-offset: 140px; --rotation: -85deg;"></div>
     </div>
-    <div class="buildings">        <div class="building b1">
-            <div class="flying-israel-flag">
-                <div class="israel-flag">
-                  <div class="flag-stripe flag-stripe-top"></div>
-                  <div class="flag-star">
-                    <svg viewBox="0 0 40 40" width="24" height="24">
-                      <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                      <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                    </svg>
-                  </div>
-                  <div class="flag-stripe flag-stripe-bottom"></div>
-                </div>
+    <div class="light-particles">
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+      <div class="light-particle"></div>
+    </div>
+    <div class="am-israel-chai">
+      <span style="--i: 0; --random-rotate: -8deg;">ע</span>
+      <span style="--i: 1; --random-rotate: 12deg;">ם</span>
+      <span style="--i: 2; --random-rotate: 0deg;"> </span>
+      <span style="--i: 3; --random-rotate: -15deg;">י</span>
+      <span style="--i: 4; --random-rotate: 10deg;">ש</span>
+      <span style="--i: 5; --random-rotate: -10deg;">ר</span>
+      <span style="--i: 6; --random-rotate: 15deg;">א</span>
+      <span style="--i: 7; --random-rotate: -12deg;">ל</span>
+      <span style="--i: 8; --random-rotate: 0deg;"> </span>
+      <span style="--i: 9; --random-rotate: 14deg;">ח</span>
+      <span style="--i: 10; --random-rotate: -15deg;">י</span>
+      <span style="--i: 11; --random-rotate: 20deg;">!</span>
+    </div>
+    <div class="random-missiles">
+      <div class="random-missile"></div>
+      <div class="random-interceptor"></div>
+      <div class="napr-explosion1"></div>
+      <div class="random-missile"></div>
+      <div class="random-interceptor"></div>
+      <div class="napr-explosion2"></div>
+      <div class="random-missile"></div>
+      <div class="random-interceptor"></div>
+      <div class="napr-explosion3"></div>
+      <div class="random-missile"></div>
+      <div class="random-interceptor"></div>
+      <div class="napr-explosion4"></div>
+      <div class="random-missile"></div>
+      <div class="random-interceptor"></div>
+      <div class="napr-explosion5"></div>
+    </div>
+    <div class="buildings">
+      <div class="building b1">
+        <div class="flying-israel-flag">
+          <div class="israel-flag">
+            <div class="flag-stripe flag-stripe-top"></div>
+            <div class="flag-star">
+              <svg viewBox="0 0 40 40" width="24" height="24">
+                <polygon
+                  points="20,8 28,24 12,24"
+                  fill="none"
+                  stroke="#0057b8"
+                  stroke-width="2.5"
+                />
+                <polygon
+                  points="20,32 12,16 28,16"
+                  fill="none"
+                  stroke="#0057b8"
+                  stroke-width="2.5"
+                />
+              </svg>
             </div>
-            <div class="windows">
-                <div class="window" style="--i: 0"></div>
-                <div class="window" style="--i: 1"></div>
-                <div class="window" style="--i: 2"></div>
-                <div class="window" style="--i: 3"></div>
-                <div class="window" style="--i: 4"></div>
-                <div class="window" style="--i: 5"></div>
-            </div>
-            <div class="door"></div>
+            <div class="flag-stripe flag-stripe-bottom"></div>
+          </div>
         </div>
-        <div class="building b2">
-            <div class="flying-israel-flag">
-                <div class="israel-flag">
-                  <div class="flag-stripe flag-stripe-top"></div>
-                  <div class="flag-star">
-                    <svg viewBox="0 0 40 40" width="24" height="24">
-                      <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                      <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                    </svg>
-                  </div>
-                  <div class="flag-stripe flag-stripe-bottom"></div>
-                </div>
-            </div>
-            <div class="windows">
-                <div class="window" style="--i: 1"></div>
-                <div class="window" style="--i: 3"></div>
-                <div class="window" style="--i: 5"></div>
-                <div class="window" style="--i: 0"></div>
-                <div class="window" style="--i: 2"></div>
-                <div class="window" style="--i: 4"></div>
-                <div class="window" style="--i: 6"></div>
-                <div class="window" style="--i: 1"></div>
-                <div class="window" style="--i: 3"></div>
-            </div>
-            <div class="door"></div>
+        <div class="windows">
+          <div class="window" style="--i: 0"></div>
+          <div class="window" style="--i: 1"></div>
+          <div class="window" style="--i: 2"></div>
+          <div class="window" style="--i: 3"></div>
+          <div class="window" style="--i: 4"></div>
+          <div class="window" style="--i: 5"></div>
         </div>
-        <div class="building b3">
-            <div class="flying-israel-flag">
-                <div class="israel-flag">
-                  <div class="flag-stripe flag-stripe-top"></div>
-                  <div class="flag-star">
-                    <svg viewBox="0 0 40 40" width="24" height="24">
-                      <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                      <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                    </svg>
-                  </div>
-                  <div class="flag-stripe flag-stripe-bottom"></div>
-                </div>
+        <div class="door"></div>
+      </div>
+      <div class="building b2">
+        <div class="flying-israel-flag">
+          <div class="israel-flag">
+            <div class="flag-stripe flag-stripe-top"></div>
+            <div class="flag-star">
+              <svg viewBox="0 0 40 40" width="24" height="24">
+                <polygon
+                  points="20,8 28,24 12,24"
+                  fill="none"
+                  stroke="#0057b8"
+                  stroke-width="2.5"
+                />
+                <polygon
+                  points="20,32 12,16 28,16"
+                  fill="none"
+                  stroke="#0057b8"
+                  stroke-width="2.5"
+                />
+              </svg>
             </div>
-            <div class="windows">
-                <div class="window" style="--i: 2"></div>
-                <div class="window" style="--i: 4"></div>
-                <div class="window" style="--i: 0"></div>
-                <div class="window" style="--i: 5"></div>
-                <div class="window" style="--i: 1"></div>
-                <div class="window" style="--i: 3"></div>
-            </div>
-            <div class="door"></div>
+            <div class="flag-stripe flag-stripe-bottom"></div>
+          </div>
         </div>
-        <div class="building b4">
-            <div class="flying-israel-flag">
-                <div class="israel-flag">
-                  <div class="flag-stripe flag-stripe-top"></div>
-                  <div class="flag-star">
-                    <svg viewBox="0 0 40 40" width="24" height="24">
-                      <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                      <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                    </svg>
-                  </div>
-                  <div class="flag-stripe flag-stripe-bottom"></div>
-                </div>
-            </div>
-            <div class="windows">
-                <div class="window" style="--i: 2"></div>
-                <div class="window" style="--i: 4"></div>
-                <div class="window" style="--i: 0"></div>
-                <div class="window" style="--i: 3"></div>
-            </div>
-            <div class="door"></div>
+        <div class="windows">
+          <div class="window" style="--i: 1"></div>
+          <div class="window" style="--i: 3"></div>
+          <div class="window" style="--i: 5"></div>
+          <div class="window" style="--i: 0"></div>
+          <div class="window" style="--i: 2"></div>
+          <div class="window" style="--i: 4"></div>
+          <div class="window" style="--i: 6"></div>
+          <div class="window" style="--i: 1"></div>
+          <div class="window" style="--i: 3"></div>
         </div>
-        <div class="building b5">
-            <div class="flying-israel-flag">
-                <div class="israel-flag">
-                  <div class="flag-stripe flag-stripe-top"></div>
-                  <div class="flag-star">
-                    <svg viewBox="0 0 40 40" width="24" height="24">
-                      <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                      <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                    </svg>
-                  </div>
-                  <div class="flag-stripe flag-stripe-bottom"></div>
-                </div>
+        <div class="door"></div>
+      </div>
+      <div class="building b3">
+        <div class="flying-israel-flag">
+          <div class="israel-flag">
+            <div class="flag-stripe flag-stripe-top"></div>
+            <div class="flag-star">
+              <svg viewBox="0 0 40 40" width="24" height="24">
+                <polygon
+                  points="20,8 28,24 12,24"
+                  fill="none"
+                  stroke="#0057b8"
+                  stroke-width="2.5"
+                />
+                <polygon
+                  points="20,32 12,16 28,16"
+                  fill="none"
+                  stroke="#0057b8"
+                  stroke-width="2.5"
+                />
+              </svg>
             </div>
-            <div class="windows">
-                <div class="window" style="--i: 0"></div>
-                <div class="window" style="--i: 3"></div>
-                <div class="window" style="--i: 6"></div>
-                <div class="window" style="--i: 1"></div>
-                <div class="window" style="--i: 4"></div>
-                <div class="window" style="--i: 7"></div>
-                <div class="window" style="--i: 2"></div>
-                <div class="window" style="--i: 5"></div>
-                <div class="window" style="--i: 8"></div>
-                <div class="window" style="--i: 1"></div>
-                <div class="window" style="--i: 4"></div>
-                <div class="window" style="--i: 7"></div>
-            </div>
-            <div class="door"></div>
+            <div class="flag-stripe flag-stripe-bottom"></div>
+          </div>
         </div>
+        <div class="windows">
+          <div class="window" style="--i: 2"></div>
+          <div class="window" style="--i: 4"></div>
+          <div class="window" style="--i: 0"></div>
+          <div class="window" style="--i: 5"></div>
+          <div class="window" style="--i: 1"></div>
+          <div class="window" style="--i: 3"></div>
+        </div>
+        <div class="door"></div>
+      </div>
+      <div class="building b4">
+        <div class="flying-israel-flag">
+          <div class="israel-flag">
+            <div class="flag-stripe flag-stripe-top"></div>
+            <div class="flag-star">
+              <svg viewBox="0 0 40 40" width="24" height="24">
+                <polygon
+                  points="20,8 28,24 12,24"
+                  fill="none"
+                  stroke="#0057b8"
+                  stroke-width="2.5"
+                />
+                <polygon
+                  points="20,32 12,16 28,16"
+                  fill="none"
+                  stroke="#0057b8"
+                  stroke-width="2.5"
+                />
+              </svg>
+            </div>
+            <div class="flag-stripe flag-stripe-bottom"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="window" style="--i: 2"></div>
+          <div class="window" style="--i: 4"></div>
+          <div class="window" style="--i: 0"></div>
+          <div class="window" style="--i: 3"></div>
+        </div>
+        <div class="door"></div>
+      </div>
+      <div class="building b5">
+        <div class="flying-israel-flag">
+          <div class="israel-flag">
+            <div class="flag-stripe flag-stripe-top"></div>
+            <div class="flag-star">
+              <svg viewBox="0 0 40 40" width="24" height="24">
+                <polygon
+                  points="20,8 28,24 12,24"
+                  fill="none"
+                  stroke="#0057b8"
+                  stroke-width="2.5"
+                />
+                <polygon
+                  points="20,32 12,16 28,16"
+                  fill="none"
+                  stroke="#0057b8"
+                  stroke-width="2.5"
+                />
+              </svg>
+            </div>
+            <div class="flag-stripe flag-stripe-bottom"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="window" style="--i: 0"></div>
+          <div class="window" style="--i: 3"></div>
+          <div class="window" style="--i: 6"></div>
+          <div class="window" style="--i: 1"></div>
+          <div class="window" style="--i: 4"></div>
+          <div class="window" style="--i: 7"></div>
+          <div class="window" style="--i: 2"></div>
+          <div class="window" style="--i: 5"></div>
+          <div class="window" style="--i: 8"></div>
+          <div class="window" style="--i: 1"></div>
+          <div class="window" style="--i: 4"></div>
+          <div class="window" style="--i: 7"></div>
+        </div>
+        <div class="door"></div>
+      </div>
     </div>
     <div class="fighter-jets">
-        <div class="fighter-jet jet1">
-            <div class="jet-body"></div>
-            <div class="jet-nose"></div>
-            <div class="jet-cockpit"></div>
-            <div class="jet-tail"></div>
-            <div class="jet-wing-left"></div>
-            <div class="jet-wing-right"></div>
-            <div class="israeli-flag">
-              <div class="flag-stripe flag-stripe-top"></div>
-              <div class="flag-star">
-                <svg viewBox="0 0 40 40" width="14" height="14">
-                  <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                  <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                </svg>
-              </div>
-              <div class="flag-stripe flag-stripe-bottom"></div>
-            </div>
-            <div class="jet-flame"></div>
+      <div class="fighter-jet jet1">
+        <div class="jet-body"></div>
+        <div class="jet-nose"></div>
+        <div class="jet-cockpit"></div>
+        <div class="jet-tail"></div>
+        <div class="jet-wing-left"></div>
+        <div class="jet-wing-right"></div>
+        <div class="israeli-flag">
+          <div class="flag-stripe flag-stripe-top"></div>
+          <div class="flag-star">
+            <svg viewBox="0 0 40 40" width="14" height="14">
+              <polygon
+                points="20,8 28,24 12,24"
+                fill="none"
+                stroke="#0057b8"
+                stroke-width="2.5"
+              />
+              <polygon
+                points="20,32 12,16 28,16"
+                fill="none"
+                stroke="#0057b8"
+                stroke-width="2.5"
+              />
+            </svg>
+          </div>
+          <div class="flag-stripe flag-stripe-bottom"></div>
         </div>
-        <div class="fighter-jet jet2">
-            <div class="jet-body"></div>
-            <div class="jet-nose"></div>
-            <div class="jet-cockpit"></div>
-            <div class="jet-tail"></div>
-            <div class="jet-wing-left"></div>
-            <div class="jet-wing-right"></div>
-            <div class="israeli-flag">
-              <div class="flag-stripe flag-stripe-top"></div>
-              <div class="flag-star">
-                <svg viewBox="0 0 40 40" width="14" height="14">
-                  <polygon points="20,8 28,24 12,24" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                  <polygon points="20,32 12,16 28,16" fill="none" stroke="#0057b8" stroke-width="2.5"/>
-                </svg>
-              </div>
-              <div class="flag-stripe flag-stripe-bottom"></div>
-            </div>
-            <div class="jet-flame"></div>
+        <div class="jet-flame"></div>
+      </div>
+      <div class="fighter-jet jet2">
+        <div class="jet-body"></div>
+        <div class="jet-nose"></div>
+        <div class="jet-cockpit"></div>
+        <div class="jet-tail"></div>
+        <div class="jet-wing-left"></div>
+        <div class="jet-wing-right"></div>
+        <div class="israeli-flag">
+          <div class="flag-stripe flag-stripe-top"></div>
+          <div class="flag-star">
+            <svg viewBox="0 0 40 40" width="14" height="14">
+              <polygon
+                points="20,8 28,24 12,24"
+                fill="none"
+                stroke="#0057b8"
+                stroke-width="2.5"
+              />
+              <polygon
+                points="20,32 12,16 28,16"
+                fill="none"
+                stroke="#0057b8"
+                stroke-width="2.5"
+              />
+            </svg>
+          </div>
+          <div class="flag-stripe flag-stripe-bottom"></div>
         </div>
+        <div class="jet-flame"></div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

@@ -1,0 +1,143 @@
+/* Enhanced Animation Mappings for Missile Interception
+   Uses the enhanced animation keyframes for all missiles */
+
+/* Override existing animations with enhanced ones */
+.missile-alt1 {
+  animation: enhanced-threat-alt1 6s cubic-bezier(.45,0,.55,1) infinite !important;
+  animation-delay: 2s !important;
+}
+
+.missile-alt2 {
+  animation: enhanced-threat-alt2 7s cubic-bezier(.42,0,.58,1) infinite !important;
+  animation-delay: 5s !important;
+}
+
+.missile-alt3 {
+  animation: enhanced-threat-alt3 8s cubic-bezier(.4,0,.6,1) infinite !important;
+  animation-delay: 8s !important;
+}
+
+.interceptor-missile.missile-alt1 {
+  animation: enhanced-intercept-alt1 6s cubic-bezier(.45,0,.55,1) infinite, missile-shake 0.25s linear infinite !important;
+  animation-delay: 2s, 0s !important;
+}
+
+.interceptor-missile.missile-alt2 {
+  animation: enhanced-intercept-alt2 7s cubic-bezier(.42,0,.58,1) infinite, missile-shake 0.25s linear infinite !important;
+  animation-delay: 5s, 0s !important;
+}
+
+.interceptor-missile.missile-alt3 {
+  animation: enhanced-intercept-alt3 8s cubic-bezier(.4,0,.6,1) infinite, missile-shake 0.25s linear infinite !important;
+  animation-delay: 8s, 0s !important;
+}
+
+/* Am Israel Hai text animations for each interception */
+.am-israel-text.alt1 {
+  left: 45vw;
+  top: 40vh;
+  animation: israel-text-appear 6s ease-out infinite;
+  animation-delay: 2.4s;
+}
+
+.am-israel-text.alt2 {
+  left: 60vw;
+  top: 50vh;
+  animation: israel-text-appear 7s ease-out infinite;
+  animation-delay: 5.4s;
+}
+
+.am-israel-text.alt3 {
+  left: 54vw;
+  top: 45vh;
+  animation: israel-text-appear 8s ease-out infinite;
+  animation-delay: 8.4s;
+}
+
+/* Animation for Am Israel Hai text appearance */
+@keyframes israel-text-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-5deg);
+    filter: blur(5px);
+  }
+  2%, 5% {
+    opacity: 1;
+    transform: scale(1.2) rotate(5deg);
+    filter: blur(0px);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+    filter: blur(0px);
+  }
+  15% {
+    opacity: 0.9;
+    transform: scale(0.95);
+  }
+  30% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-50px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Shockwave animations for each interception */
+.shockwave-1.alt1, 
+.shockwave-2.alt1 {
+  left: 45vw;
+  top: 40vh;
+}
+
+.shockwave-1.alt2, 
+.shockwave-2.alt2 {
+  left: 60vw;
+  top: 50vh;
+}
+
+.shockwave-1.alt3, 
+.shockwave-2.alt3 {
+  left: 54vw;
+  top: 45vh;
+}
+
+/* Explosion debris animations for each interception */
+.explosion-debris.alt1 {
+  left: 45vw;
+  top: 40vh;
+  animation: debris 1.8s ease-out forwards;
+  animation-delay: 2.2s;
+}
+
+.explosion-debris.alt2 {
+  left: 60vw;
+  top: 50vh;
+  animation: debris 1.8s ease-out forwards;
+  animation-delay: 5.2s;
+}
+
+.explosion-debris.alt3 {
+  left: 54vw;
+  top: 45vh;
+  animation: debris 1.8s ease-out forwards;
+  animation-delay: 8.2s;
+}
+
+/* Enhanced explosion animations */
+.intercept-explosion.alt1 {
+  animation: enhanced-explosion 6s ease-out infinite !important;
+  animation-delay: 2s !important;
+}
+
+.intercept-explosion.alt2 {
+  animation: enhanced-explosion 7s ease-out infinite !important;
+  animation-delay: 5s !important;
+}
+
+.intercept-explosion.alt3 {
+  animation: enhanced-explosion 8s ease-out infinite !important;
+  animation-delay: 8s !important;
+}

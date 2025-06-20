@@ -1,0 +1,173 @@
+/* Missing Animations for Missiles and Interceptions */
+
+/* Basic missile approach animation */
+@keyframes threat-approach {
+  0% {
+    left: 110vw;
+    top: 15vh;
+  }
+  100% {
+    left: 50vw;
+    top: 45vh;
+  }
+}
+
+@keyframes interceptor-launch {
+  0% {
+    left: 15vw;
+    top: 65vh;
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    left: 55vw;
+    top: 45vh;
+  }
+}
+
+/* Alt missile paths */
+.missile-alt1 {
+  animation: threat-alt1 6s cubic-bezier(.45,0,.55,1) infinite;
+  animation-delay: 2s;
+}
+
+.missile-alt2 {
+  animation: threat-alt2 7s cubic-bezier(.42,0,.58,1) infinite;
+  animation-delay: 5s;
+}
+
+.missile-alt3 {
+  animation: threat-alt3 8s cubic-bezier(.4,0,.6,1) infinite;
+  animation-delay: 8s;
+}
+
+@keyframes threat-alt1 {
+  0% {
+    left: 110vw;
+    top: 25vh;
+  }
+  100% {
+    left: 45vw;
+    top: 40vh;
+  }
+}
+
+@keyframes threat-alt2 {
+  0% {
+    left: 110vw;
+    top: 20vh;
+  }
+  100% {
+    left: 60vw;
+    top: 50vh;
+  }
+}
+
+@keyframes threat-alt3 {
+  0% {
+    left: 110vw;
+    top: 30vh;
+  }
+  100% {
+    left: 54vw;
+    top: 45vh;
+  }
+}
+
+/* Interception animations for specific missiles */
+.interceptor-missile.missile-alt1 {
+  animation: intercept-alt1 6s cubic-bezier(.45,0,.55,1) infinite;
+  animation-delay: 2s;
+}
+
+.interceptor-missile.missile-alt2 {
+  animation: intercept-alt2 7s cubic-bezier(.42,0,.58,1) infinite;
+  animation-delay: 5s;
+}
+
+.interceptor-missile.missile-alt3 {
+  animation: intercept-alt3 8s cubic-bezier(.4,0,.6,1) infinite;
+  animation-delay: 8s;
+}
+
+@keyframes intercept-alt1 {
+  0% {
+    left: 15vw;
+    top: 65vh;
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    left: 45vw;
+    top: 40vh;
+  }
+}
+
+@keyframes intercept-alt2 {
+  0% {
+    left: 15vw;
+    top: 65vh;
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    left: 60vw;
+    top: 50vh;
+  }
+}
+
+@keyframes intercept-alt3 {
+  0% {
+    left: 15vw;
+    top: 65vh;
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    left: 54vw;
+    top: 45vh;
+  }
+}
+
+/* Explosion animations for specific interceptions */
+.intercept-explosion.alt1 {
+  left: 45vw;
+  top: 40vh;
+  animation: explosion 6s ease-out infinite;
+  animation-delay: 2s;
+}
+
+.intercept-explosion.alt2 {
+  left: 60vw;
+  top: 50vh;
+  animation: explosion 7s ease-out infinite;
+  animation-delay: 5s;
+}
+
+.intercept-explosion.alt3 {
+  left: 54vw;
+  top: 45vh;
+  animation: explosion 8s ease-out infinite;
+  animation-delay: 8s;
+}
+
+/* Base styles for intercept explosions */
+.intercept-explosion {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, #ffff00 20%, #ff6600 40%, #ff0000 70%, transparent 100%);
+  opacity: 0;
+  z-index: 100;
+  box-shadow: 0 0 50px 10px rgba(255,230,0,0.7), 0 0 100px 30px rgba(255,0,0,0.5);
+  pointer-events: none;
+}

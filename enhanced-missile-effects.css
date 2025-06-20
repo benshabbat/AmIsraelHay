@@ -1,0 +1,531 @@
+/* Enhanced Missile Effects for Iron Dome Animation
+   Makes missiles and interceptions more realistic */
+
+/* Enhanced Threat Missile Styling */
+.threat-missile {
+  position: absolute;
+  /* Improved missile shape for more realism */
+  border-radius: 18px 2px 2px 18px;
+  /* Enhanced coloring with metallic effect */
+  background: linear-gradient(270deg, 
+    #ff5252 0%, 
+    #b71c1c 30%, 
+    #7f0000 70%, 
+    #4a0000 100%);
+  border: 1px solid #ff3232;
+  /* More dynamic light effect */
+  box-shadow: 
+    0 2px 20px 4px rgba(170,0,0,0.7), 
+    0 0 15px 3px rgba(255,60,60,0.6),
+    inset 0 0 8px 1px rgba(255,200,200,0.5);
+  /* Better dimensions for more realistic look */
+  width: 58px;
+  height: 12px;
+  /* Maintain other properties */
+  transform: rotate(270deg);
+  z-index: 60;
+}
+
+/* Add missile tail fin details */
+.threat-missile::after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 18px;
+  background: linear-gradient(90deg, #7f0000, #4a0000);
+  border-radius: 0 2px 2px 0;
+  box-shadow: -1px 0 3px rgba(0,0,0,0.4);
+}
+
+/* Enhanced missile flame with more dynamic effect */
+.threat-missile::before {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 6px;
+  background: linear-gradient(90deg, 
+    rgba(255,150,0,0.9) 0%, 
+    rgba(255,80,0,0.8) 40%, 
+    rgba(255,30,0,0.7) 70%, 
+    transparent 100%);
+  left: -32px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50% 0 0 50%;
+  filter: blur(1.5px) brightness(1.3);
+  box-shadow: 
+    0 0 15px 5px rgba(255,100,0,0.7), 
+    0 0 30px 10px rgba(255,30,0,0.5);
+  animation: flame-flicker 0.08s ease-in-out infinite alternate;
+}
+
+/* Enhanced smoke trail for threat missiles */
+.threat-missile-trail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: -100%;
+  pointer-events: none;
+}
+
+.threat-missile-trail::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    rgba(100,100,100,0.1) 0%, 
+    rgba(120,120,120,0.2) 30%, 
+    rgba(150,150,150,0.3) 70%, 
+    rgba(180,180,180,0.4) 100%);
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: blur(3px);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Enhanced Interceptor Styling */
+.interceptor-missile {
+  position: absolute;
+  /* More realistic missile shape */
+  border-radius: 14px 3px 3px 14px;
+  /* Enhanced coloring with metallic effect */
+  background: linear-gradient(90deg, 
+    #f5f5f5 0%, 
+    #e0e0e0 30%, 
+    #bdbdbd 70%, 
+    #9e9e9e 100%);
+  border: 1px solid #d5d5d5;
+  /* Improved dimensions */
+  width: 52px;
+  height: 10px;
+  /* More dynamic light effect */
+  box-shadow: 
+    0 0 20px 4px rgba(0,50,255,0.4), 
+    0 0 10px 2px rgba(100,150,255,0.5),
+    inset 0 0 6px 1px rgba(255,255,255,0.7);
+  z-index: 50;
+}
+
+/* Add interceptor tail fin details */
+.interceptor-missile::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 16px;
+  background: linear-gradient(90deg, #9e9e9e, #bdbdbd);
+  border-radius: 2px 0 0 2px;
+  box-shadow: 1px 0 3px rgba(0,0,0,0.3);
+}
+
+/* Enhanced interceptor flame with more dynamic effect */
+.interceptor-flame {
+  width: 35px;
+  height: 7px;
+  background: linear-gradient(90deg, 
+    rgba(0,120,255,0.9) 0%, 
+    rgba(100,200,255,0.9) 20%,
+    rgba(150,220,255,0.8) 40%, 
+    rgba(200,230,255,0.6) 80%,
+    transparent 100%);
+  left: -35px;
+  filter: blur(1.5px) brightness(1.4);
+  box-shadow: 
+    0 0 15px 5px rgba(0,120,255,0.7), 
+    0 0 30px 10px rgba(100,180,255,0.5);
+  animation: flame-flicker 0.07s ease-in-out infinite alternate;
+}
+
+/* Enhanced interceptor trail */
+.interceptor-missile-trail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  pointer-events: none;
+}
+
+.interceptor-missile-trail::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgba(180,220,255,0.1) 0%, 
+    rgba(150,200,255,0.2) 30%, 
+    rgba(100,180,255,0.3) 70%, 
+    rgba(50,150,255,0.4) 100%);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: blur(3px);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Improved Explosion Effects */
+.intercept-explosion {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* Enhanced explosion gradient */
+  background: radial-gradient(circle, 
+    rgba(255,255,255,1) 0%, 
+    rgba(255,240,150,0.95) 15%, 
+    rgba(255,180,60,0.9) 30%, 
+    rgba(255,100,0,0.8) 45%, 
+    rgba(255,30,0,0.7) 65%, 
+    rgba(120,20,0,0.3) 85%, 
+    transparent 100%);
+  /* More dynamic light effect */
+  box-shadow: 
+    0 0 70px 20px rgba(255,230,0,0.9), 
+    0 0 150px 40px rgba(255,100,0,0.7),
+    0 0 200px 60px rgba(255,0,0,0.5);
+  opacity: 0;
+  z-index: 100;
+  transform-origin: center;
+  animation: enhanced-explosion 5s ease-out forwards;
+  pointer-events: none;
+}
+
+/* Improved Flame Flicker Animation */
+@keyframes flame-flicker {
+  0% {
+    opacity: 0.85;
+    width: 30px;
+  }
+  25% {
+    opacity: 0.95;
+    width: 33px;
+  }
+  50% {
+    opacity: 0.9;
+    width: 32px;
+  }
+  75% {
+    opacity: 0.98;
+    width: 34px;
+  }
+  100% {
+    opacity: 1;
+    width: 35px;
+  }
+}
+
+/* Enhanced explosion animation */
+@keyframes enhanced-explosion {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.3); 
+  }
+  2% { 
+    opacity: 0.2;
+    transform: scale(0.5); 
+  }
+  5% { 
+    opacity: 1;
+    transform: scale(1.5); 
+    background: radial-gradient(circle, 
+      rgba(255,255,255,1) 0%, 
+      rgba(255,240,150,0.95) 15%, 
+      rgba(255,180,60,0.9) 30%, 
+      rgba(255,100,0,0.8) 45%, 
+      rgba(255,30,0,0.7) 65%, 
+      rgba(120,20,0,0.3) 85%, 
+      transparent 100%);
+    box-shadow: 
+      0 0 80px 30px rgba(255,240,150,0.9), 
+      0 0 160px 50px rgba(255,100,0,0.8),
+      0 0 220px 70px rgba(255,0,0,0.6);
+  }
+  15% { 
+    opacity: 0.9;
+    transform: scale(1.3); 
+    background: radial-gradient(circle, 
+      rgba(255,255,255,0.9) 0%, 
+      rgba(255,220,120,0.9) 20%, 
+      rgba(255,150,30,0.8) 40%, 
+      rgba(255,60,0,0.7) 60%, 
+      rgba(180,20,0,0.4) 80%, 
+      transparent 100%);
+    box-shadow: 
+      0 0 70px 25px rgba(255,220,120,0.8), 
+      0 0 140px 40px rgba(255,60,0,0.7),
+      0 0 200px 60px rgba(220,0,0,0.5);
+  }
+  30% { 
+    opacity: 0.7;
+    transform: scale(1.1); 
+    background: radial-gradient(circle, 
+      rgba(255,220,150,0.8) 0%, 
+      rgba(255,180,60,0.7) 25%, 
+      rgba(255,100,0,0.6) 50%, 
+      rgba(220,40,0,0.5) 75%, 
+      transparent 95%);
+    box-shadow: 
+      0 0 60px 20px rgba(255,180,80,0.7), 
+      0 0 120px 30px rgba(255,40,0,0.6),
+      0 0 180px 50px rgba(180,0,0,0.4);
+  }
+  50% { 
+    opacity: 0.5;
+    transform: scale(0.9); 
+    background: radial-gradient(circle, 
+      rgba(255,180,120,0.7) 0%, 
+      rgba(255,120,40,0.6) 30%, 
+      rgba(220,60,0,0.5) 60%, 
+      rgba(180,30,0,0.3) 85%, 
+      transparent 100%);
+    box-shadow: 
+      0 0 50px 15px rgba(255,150,50,0.6), 
+      0 0 100px 25px rgba(220,20,0,0.5),
+      0 0 150px 40px rgba(150,0,0,0.3);
+  }
+  70% { 
+    opacity: 0.3;
+    transform: scale(0.7); 
+    background: radial-gradient(circle, 
+      rgba(220,150,80,0.6) 0%, 
+      rgba(200,80,30,0.5) 40%, 
+      rgba(180,40,0,0.4) 70%, 
+      transparent 100%);
+    box-shadow: 
+      0 0 40px 10px rgba(220,120,40,0.5), 
+      0 0 80px 20px rgba(180,20,0,0.4),
+      0 0 120px 30px rgba(120,0,0,0.2);
+  }
+  100% { 
+    opacity: 0;
+    transform: scale(0.4); 
+  }
+}
+
+/* Shockwave effect after explosion */
+.shockwave {
+  position: absolute;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  z-index: 99;
+  pointer-events: none;
+}
+
+.shockwave-1 {
+  animation: shockwave 1.5s ease-out 0.2s;
+}
+
+.shockwave-2 {
+  animation: shockwave 1.8s ease-out 0.35s;
+}
+
+@keyframes shockwave {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.7;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* Debris flying after explosion */
+.explosion-debris {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #ff7700;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 99;
+  box-shadow: 0 0 10px rgba(255, 120, 0, 0.7);
+  pointer-events: none;
+}
+
+.debris-1 { animation: debris 2s ease-out 0.1s; }
+.debris-2 { animation: debris 1.8s ease-out 0.2s; }
+.debris-3 { animation: debris 1.5s ease-out 0.15s; }
+.debris-4 { animation: debris 1.6s ease-out 0.25s; }
+.debris-5 { animation: debris 1.7s ease-out 0.3s; }
+
+@keyframes debris {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  70% {
+    opacity: 0.5;
+    transform: translate(var(--x, 80px), var(--y, -60px)) scale(0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x, 120px), var(--y, -80px)) scale(0.5);
+  }
+}
+
+/* Am Israel Hai text enhancement after explosion */
+.am-israel-text {
+  position: absolute;
+  font-family: 'Arial Hebrew', Arial, sans-serif;
+  font-weight: bold;
+  text-shadow: 
+    0 0 10px #fff,
+    0 0 20px #0057b8,
+    0 0 30px #0057b8,
+    0 0 40px #0057b8;
+  color: white;
+  font-size: 44px;
+  opacity: 0;
+  z-index: 101;
+  pointer-events: none;
+  white-space: nowrap;
+  text-align: center;
+  direction: rtl;
+  animation: am-israel-pulse 0.2s ease-in-out infinite alternate;
+}
+
+@keyframes am-israel-pulse {
+  0% { text-shadow: 
+    0 0 10px #fff,
+    0 0 20px #0057b8,
+    0 0 30px #0057b8; 
+  }
+  100% { text-shadow: 
+    0 0 15px #fff,
+    0 0 25px #0057b8,
+    0 0 40px #0057b8; 
+  }
+}
+
+/* Enhanced missile animation paths */
+@keyframes enhanced-threat-alt1 {
+  0% {
+    left: 110vw;
+    top: 25vh;
+    opacity: 0.9;
+  }
+  95% {
+    left: 45vw;
+    top: 40vh;
+    opacity: 1;
+  }
+  100% {
+    left: 45vw;
+    top: 40vh;
+    opacity: 0;
+  }
+}
+
+@keyframes enhanced-threat-alt2 {
+  0% {
+    left: 110vw;
+    top: 20vh;
+    opacity: 0.9;
+  }
+  95% {
+    left: 60vw;
+    top: 50vh;
+    opacity: 1;
+  }
+  100% {
+    left: 60vw;
+    top: 50vh;
+    opacity: 0;
+  }
+}
+
+@keyframes enhanced-threat-alt3 {
+  0% {
+    left: 110vw;
+    top: 30vh;
+    opacity: 0.9;
+  }
+  95% {
+    left: 54vw;
+    top: 45vh;
+    opacity: 1;
+  }
+  100% {
+    left: 54vw;
+    top: 45vh;
+    opacity: 0;
+  }
+}
+
+/* Enhanced interceptor animation paths */
+@keyframes enhanced-intercept-alt1 {
+  0% {
+    left: 15vw;
+    top: 65vh;
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 1;
+  }
+  95% {
+    left: 45vw;
+    top: 40vh;
+    opacity: 1;
+  }
+  100% {
+    left: 45vw;
+    top: 40vh;
+    opacity: 0;
+  }
+}
+
+@keyframes enhanced-intercept-alt2 {
+  0% {
+    left: 15vw;
+    top: 65vh;
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 1;
+  }
+  95% {
+    left: 60vw;
+    top: 50vh;
+    opacity: 1;
+  }
+  100% {
+    left: 60vw;
+    top: 50vh;
+    opacity: 0;
+  }
+}
+
+@keyframes enhanced-intercept-alt3 {
+  0% {
+    left: 15vw;
+    top: 65vh;
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 1;
+  }
+  95% {
+    left: 54vw;
+    top: 45vh;
+    opacity: 1;
+  }
+  100% {
+    left: 54vw;
+    top: 45vh;
+    opacity: 0;
+  }
+}

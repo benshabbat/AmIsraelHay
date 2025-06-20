@@ -1,0 +1,190 @@
+/* Building styles and animations */
+
+/* Buildings container */
+.buildings {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* Base building styles */
+.building {
+  position: relative;
+  background: linear-gradient(to bottom, #444, #222);
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow: visible;
+}
+
+/* Building variations */
+.b1 {
+  width: 120px;
+  height: 180px;
+}
+
+.b2 {
+  width: 160px;
+  height: 220px;
+}
+
+.b3 {
+  width: 140px;
+  height: 160px;
+}
+
+.b4 {
+  width: 110px;
+  height: 140px;
+}
+
+.b5 {
+  width: 180px;
+  height: 240px;
+}
+
+/* Windows */
+.windows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.window {
+  width: 12px;
+  height: 18px;
+  background: rgba(255, 255, 100, 0.7);
+  margin: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 100, 0.5);
+  animation: window-flicker 3s infinite;
+  animation-delay: calc(var(--i) * 0.7s);
+}
+
+@keyframes window-flicker {
+  0%, 100% { 
+    opacity: 0.7;
+    background: rgba(255, 255, 100, 0.7);
+  }
+  50% { 
+    opacity: 0.9;
+    background: rgba(255, 255, 150, 0.9);
+  }
+}
+
+/* Door styles */
+.door {
+  width: 30px;
+  height: 45px;
+  background: #333;
+  margin-top: auto;
+  margin-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) inset;
+}
+
+/* Israeli flags on buildings */
+.flying-israel-flag {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 55px;
+  z-index: 31;
+  animation: flag-wave 4s ease-in-out infinite;
+}
+
+/* Flag pole */
+.flying-israel-flag::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 68px;
+  background: linear-gradient(180deg, #bbb, #888, #666);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  z-index: -1;
+}
+
+/* Flag pole cap */
+.flying-israel-flag::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #dddddd;
+  border-radius: 50%;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #666;
+  z-index: -1;
+}
+
+.israel-flag {
+  width: 40px;
+  height: 30px;
+  background: white;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: flag-shimmer 1.5s infinite alternate;
+}
+
+@keyframes flag-wave {
+  0%, 100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(2deg);
+  }
+}
+
+/* Flag light effect */
+.israel-flag::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
+  left: 0;
+  top: 0;
+}
+
+/* Shine effect on flags */
+.israel-flag::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.5) 50%, transparent 80%);
+  left: -200%;
+  top: 0;
+  animation: shine-effect 4s linear infinite;
+}
+
+/* Building ambient light */
+.building::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+  pointer-events: none;
+}

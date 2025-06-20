@@ -1,0 +1,202 @@
+/* Iron Dome System CSS Fixes */
+
+/* Main container for the Iron Dome system */
+.iron-dome-system {
+  position: absolute;
+  left: 15vw;
+  bottom: 30px;
+  width: 320px;
+  height: 200px;
+  z-index: 70;
+  transform-origin: bottom center;
+  animation: slight-hover 4s ease-in-out infinite alternate;
+}
+
+/* Launcher truck styling */
+.launcher-truck {
+  position: absolute;
+  bottom: 0;
+  width: 180px;
+  height: 60px;
+  background: linear-gradient(to bottom, #2d2d2d, #1a1a1a);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  z-index: 71;
+}
+
+.wheel {
+  position: absolute;
+  bottom: -15px;
+  width: 30px;
+  height: 30px;
+  background: #111;
+  border-radius: 50%;
+  border: 4px solid #333;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.3);
+}
+
+.wheel:nth-child(1) {
+  left: 20px;
+}
+
+.wheel:nth-child(2) {
+  left: 60px;
+}
+
+.wheel:nth-child(3) {
+  left: 100px;
+}
+
+.wheel:nth-child(4) {
+  left: 140px;
+}
+
+.truck-bumper {
+  position: absolute;
+  bottom: 10px;
+  left: -10px;
+  width: 20px;
+  height: 30px;
+  background: #444;
+  border-radius: 4px 0 0 4px;
+}
+
+.truck-steps {
+  position: absolute;
+  bottom: 0;
+  right: -15px;
+  width: 15px;
+  height: 40px;
+  background: linear-gradient(90deg, #333, #222);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Launcher unit styling */
+.launcher-unit {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  width: 100px;
+  height: 120px;
+  background: linear-gradient(to right, #375C99, #1A3A70);
+  border-radius: 10px 10px 0 0;
+  transform: rotate(-5deg);
+  transform-origin: bottom center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  z-index: 72;
+}
+
+.launcher-cassettes {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cassette {
+  width: 70px;
+  height: 18px;
+  background: #666;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3) inset, 0 0 2px rgba(255,255,255,0.2);
+  position: relative;
+}
+
+.cassette::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #0057b8;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 87, 184, 0.7);
+}
+
+.cassette::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #ff4444;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 68, 68, 0.7);
+}
+
+/* Radar system styling */
+.radar-system {
+  position: absolute;
+  bottom: 60px;
+  right: 30px;
+  width: 80px;
+  height: 100px;
+  z-index: 73;
+}
+
+.radar-frame {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 70px;
+  background: linear-gradient(to right, #444, #222);
+  border-radius: 5px 5px 0 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.radar-dish {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #999, #555);
+  border-radius: 50% 50% 10% 10%;
+  border: 4px solid #333;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  animation: radar-scan 6s linear infinite;
+}
+
+.radar-dish::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #0057b8, #003780);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 87, 184, 0.8);
+}
+
+/* Animation for radar scanning */
+@keyframes radar-scan {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+/* Animation for hovering effect */
+@keyframes slight-hover {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0.5deg);
+  }
+}

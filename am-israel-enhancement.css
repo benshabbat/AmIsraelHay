@@ -1,0 +1,545 @@
+/* Enhanced animations for Am Israel Hai effect */
+
+/* Main explosion animation */
+@keyframes main-explosion {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.4) rotate(0deg); 
+    background: radial-gradient(circle, #fff 0%, #ffff00 10%, #ff6600 30%, #ff0000 50%, transparent 70%);
+    filter: blur(0);
+  }
+  5% { 
+    opacity: 1; 
+    transform: scale(1.2) rotate(5deg);
+    filter: blur(0);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,230,0,0.9) 20%, rgba(255,140,0,0.8) 40%, rgba(255,40,0,0.8) 70%, transparent 100%);
+    box-shadow: 
+      0 0 160px 60px rgba(255,230,0,0.9), 
+      0 0 220px 100px rgba(255,0,0,0.8),
+      0 0 20px 7px rgba(255,255,255,1) inset;
+  }
+  10% { 
+    opacity: 1; 
+    transform: scale(1.6) rotate(10deg); 
+    filter: blur(2px);
+    background: radial-gradient(
+      circle,
+      #fff 0%,
+      #ffff00 15%,
+      #ff6600 35%,
+      #ff0000 65%,
+      transparent 95%
+    );
+    box-shadow: 
+      0 0 160px 90px rgba(255,230,0,1), 
+      0 0 260px 130px rgba(255,0,0,0.9),
+      0 0 50px 15px rgba(0,87,184,0.6),
+      0 0 25px 10px rgba(255,255,255,1) inset;
+  }
+  20% {
+    transform: scale(1.4) rotate(5deg);
+    filter: blur(1px);
+    background: radial-gradient(
+      circle,
+      #fff 0%,
+      #ffff00 15%,
+      #ff6600 35%,
+      #ff0000 65%,
+      transparent 90%
+    );
+    box-shadow: 
+      0 0 140px 70px rgba(255,230,0,0.8), 
+      0 0 220px 100px rgba(255,0,0,0.7),
+      0 0 40px 12px rgba(0,87,184,0.5),
+      0 0 20px 8px rgba(255,255,255,0.9) inset;
+  }
+  40% { 
+    transform: scale(1) rotate(0deg); 
+    opacity: 0.7; 
+    filter: blur(0.5px);
+    background: radial-gradient(
+      circle,
+      #fff 0%,
+      #ffcc00 10%,
+      #ff6600 30%,
+      #ff3300 60%,
+      transparent 85%
+    );
+    box-shadow: 
+      0 0 110px 55px rgba(255,200,0,0.6), 
+      0 0 180px 80px rgba(255,0,0,0.5),
+      0 0 30px 10px rgba(0,87,184,0.4),
+      0 0 15px 6px rgba(255,255,255,0.8) inset;
+  }
+  70% { 
+    transform: scale(0.6) rotate(-5deg); 
+    opacity: 0.3; 
+    filter: blur(1px);
+    background: radial-gradient(
+      circle,
+      #ffcc00 0%,
+      #ff6600 30%,
+      #ff3300 60%,
+      transparent 80%
+    );
+    box-shadow: 
+      0 0 80px 40px rgba(255,150,0,0.4), 
+      0 0 120px 55px rgba(255,0,0,0.3),
+      0 0 20px 8px rgba(0,87,184,0.3),
+      0 0 10px 4px rgba(255,255,255,0.7) inset;
+  }
+  100% { 
+    transform: scale(0.3) rotate(-10deg); 
+    opacity: 0; 
+    filter: blur(2px);
+    background: radial-gradient(
+      circle,
+      #ff9900 0%,
+      #ff3300 50%,
+      transparent 75%
+    );
+    box-shadow: 
+      0 0 50px 25px rgba(255,100,0,0.2), 
+      0 0 70px 30px rgba(255,0,0,0.1),
+      0 0 10px 5px rgba(0,87,184,0.2),
+      0 0 5px 2px rgba(255,255,255,0.6) inset;
+  }
+}
+
+/* Text reveal animation for Am Israel Hai with enhanced effect */
+@keyframes enhanced-text-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(15px) brightness(2);
+    transform: scale(0.5) translateY(40px);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(0, 87, 184, 1);
+  }
+  15% {
+    opacity: 0.3;
+    filter: blur(8px) brightness(2);
+    transform: scale(0.8) translateY(20px);
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(0, 87, 184, 0.9);
+  }
+  40% {
+    opacity: 1;
+    filter: blur(0) brightness(1.8);
+    transform: scale(1.3) translateY(-10px);
+    text-shadow: 
+      0 0 30px rgba(255, 255, 255, 1), 
+      0 0 70px rgba(0, 87, 184, 0.9),
+      0 0 10px rgba(255, 230, 0, 0.8);
+  }
+  60% {
+    filter: blur(1px) brightness(1.5);
+    transform: scale(1.2) translateY(-5px);
+    text-shadow: 
+      0 0 25px rgba(255, 255, 255, 0.9), 
+      0 0 50px rgba(0, 87, 184, 0.7),
+      0 0 8px rgba(255, 230, 0, 0.7);
+  }
+  80% {
+    filter: blur(0.5px) brightness(1.3);
+    transform: scale(1.1);
+    text-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.8), 
+      0 0 40px rgba(0, 87, 184, 0.6),
+      0 0 5px rgba(255, 230, 0, 0.6);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+    transform: scale(1);
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.7), 
+      0 0 20px rgba(0, 87, 184, 0.5),
+      0 0 3px rgba(255, 230, 0, 0.5);
+  }
+}
+
+/* Glowing effect animation */
+@keyframes text-glow {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.7); 
+  }
+  15% { 
+    opacity: 0.2; 
+    transform: scale(0.8); 
+  }
+  40% { 
+    opacity: 0.9; 
+    transform: scale(1.1); 
+  }
+  60% { 
+    opacity: 0.7; 
+    transform: scale(1.05); 
+  }
+  80% { 
+    opacity: 0.4; 
+    transform: scale(1.02); 
+  }
+  100% { 
+    opacity: 0.1; 
+    transform: scale(1); 
+  }
+}
+
+/* Shine effect animation */
+@keyframes text-shine {
+  0% { 
+    transform: skewX(-20deg) translateX(-120%); 
+    opacity: 0; 
+  }
+  20% { 
+    opacity: 0; 
+  }
+  30% { 
+    opacity: 0.8; 
+  }
+  40% { 
+    transform: skewX(-20deg) translateX(120%); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: skewX(-20deg) translateX(120%); 
+    opacity: 0; 
+  }
+}
+
+/* Enhanced debris particles animation */
+@keyframes enhanced-debris-fall {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+    box-shadow: 0 0 15px 5px rgba(255, 204, 0, 0.8);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 10px 3px rgba(255, 150, 0, 0.6);
+  }
+  100% {
+    transform: translate(var(--x-offset), var(--y-offset)) rotate(var(--rotation)) scale(0.6);
+    opacity: 0;
+    box-shadow: 0 0 5px 1px rgba(255, 100, 0, 0.3);
+  }
+}
+
+/* Enhanced shockwave effect */
+@keyframes enhanced-shockwave {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.9;
+    border-width: 18px;
+    box-shadow: 0 0 30px 10px rgba(255,255,255,0.9), 0 0 60px 25px rgba(0,87,184,0.7);
+  }
+  30% {
+    opacity: 0.7;
+    border-width: 10px;
+    box-shadow: 0 0 25px 8px rgba(255,255,255,0.8), 0 0 50px 20px rgba(0,87,184,0.6);
+  }
+  60% {
+    opacity: 0.4;
+    border-width: 5px;
+    box-shadow: 0 0 20px 6px rgba(255,255,255,0.6), 0 0 40px 15px rgba(0,87,184,0.4);
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+    border-width: 1px;
+    box-shadow: 0 0 10px 3px rgba(255,255,255,0.3), 0 0 25px 10px rgba(0,87,184,0.2);
+  }
+}
+
+/* Israel flag highlight effect */
+@keyframes israeli-glow {
+  0% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.4),
+      0 0 20px rgba(0, 87, 184, 0.4);
+    transform: scale(1);
+  }
+  25% {
+    text-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.9),
+      0 0 30px rgba(0, 87, 184, 0.9),
+      0 0 45px rgba(0, 87, 184, 0.5);
+    transform: scale(1.05);
+  }
+  50% {
+    text-shadow: 
+      0 0 18px rgba(255, 255, 255, 1),
+      0 0 35px rgba(0, 87, 184, 1),
+      0 0 50px rgba(0, 87, 184, 0.7);
+    transform: scale(1.1);
+  }
+  75% {
+    text-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.9),
+      0 0 30px rgba(0, 87, 184, 0.9),
+      0 0 45px rgba(0, 87, 184, 0.5);
+    transform: scale(1.05);
+  }
+  100% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.4),
+      0 0 20px rgba(0, 87, 184, 0.4);
+    transform: scale(1);
+  }
+}
+
+/* Add letter-by-letter animation effect */
+@keyframes letter-glow {
+  0% {
+    opacity: 0;
+    transform: scale(1.8) translateY(-15px) rotate(var(--random-rotate, 10deg));
+    text-shadow: 
+      0 0 20px rgba(255, 255, 255, 1), 
+      0 0 40px rgba(0, 87, 184, 1),
+      0 0 60px rgba(255, 255, 255, 0.8);
+    filter: blur(3px);
+  }
+  40% {
+    opacity: 0.6;
+    transform: scale(1.4) translateY(-8px) rotate(calc(var(--random-rotate, 10deg) / 2));
+    text-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.9), 
+      0 0 30px rgba(0, 87, 184, 0.9),
+      0 0 50px rgba(255, 255, 255, 0.7);
+    filter: blur(1px);
+  }
+  70% {
+    opacity: 0.8;
+    transform: scale(1.1) translateY(-3px) rotate(calc(var(--random-rotate, 10deg) / 4));
+    text-shadow: 
+      0 0 12px rgba(255, 255, 255, 0.8), 
+      0 0 25px rgba(0, 87, 184, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6);
+    filter: blur(0.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.7), 
+      0 0 20px rgba(0, 87, 184, 0.7),
+      0 0 30px rgba(255, 255, 255, 0.5);
+    filter: blur(0);
+  }
+}
+
+/* Light particles animation */
+@keyframes light-particle {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.5) rotate(0deg);
+    filter: blur(2px);
+  }
+  10% {
+    opacity: 0.5;
+    transform: translate(calc(var(--x) * 0.3), calc(var(--y) * 0.3)) scale(0.7) rotate(45deg);
+    filter: blur(1px);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(calc(var(--x) * 0.6), calc(var(--y) * 0.6)) scale(1.2) rotate(90deg);
+    filter: blur(0);
+  }
+  70% {
+    opacity: 0.7;
+    transform: translate(var(--x), var(--y)) scale(1) rotate(180deg);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--x) * 1.5), calc(var(--y) * 1.5)) scale(0.1) rotate(360deg);
+    filter: blur(3px);
+  }
+}
+
+/* Add shockwave element */
+.shockwave {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 54vw;
+  top: 45vh;
+  border-radius: 50%;
+  border: 18px solid rgba(255, 255, 255, 0.8);
+  z-index: 99;
+  opacity: 0;
+  animation: enhanced-shockwave 2.5s ease-out infinite;
+  animation-delay: 0.7s;
+  pointer-events: none;
+  box-sizing: border-box;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+/* Secondary shockwave for multi-wave effect */
+.shockwave.secondary {
+  animation-delay: 1.2s;
+}
+
+/* Enhanced styles for the main explosion */
+.intercept-explosion.main-explosion {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  left: 54vw;
+  top: 45vh;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, #ffff00 20%, #ff6600 50%, #ff0000 80%, transparent 100%);
+  opacity: 0;
+  animation: main-explosion 6s ease-in-out infinite;
+  z-index: 101;
+  box-shadow: 
+    0 0 80px 30px rgba(255,230,0,0.8), 
+    0 0 180px 60px rgba(255,0,0,0.7),
+    0 0 15px 5px rgba(255,255,255,0.95) inset;
+  border: 4px solid rgba(255,255,255,0.8);
+  pointer-events: none;
+  transform-origin: center center;
+}
+
+/* Enhanced styles for Am Israel Hai text */
+.am-israel-chai {
+  position: absolute;
+  left: 50%;
+  top: 45vh;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-family: 'Arial Hebrew', Arial, sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 200;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.8), 
+    0 0 40px rgba(0, 87, 184, 0.6),
+    0 0 60px rgba(255, 255, 255, 0.4);
+  animation: enhanced-text-reveal 6s ease-in-out infinite;
+  animation-delay: 0.8s;
+  position: relative;
+  letter-spacing: 0.05em;
+  filter: drop-shadow(0 0 5px rgba(0, 87, 184, 0.8));
+}
+
+.am-israel-chai::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  left: -10%;
+  top: -10%;
+  background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  filter: blur(10px);
+  z-index: -1;
+  opacity: 0;
+  animation: text-glow 6s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.am-israel-chai::after {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 100%;
+  left: -25%;
+  top: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  z-index: 1;
+  opacity: 0;
+  animation: text-shine 6s ease-in-out infinite;
+  animation-delay: 1.5s;
+  transform: skewX(-20deg) translateX(-120%);
+}
+
+/* Enhanced debris styles */
+.debris {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ffcc00;
+  border-radius: 50%;
+  opacity: 0;
+  filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.8));
+  box-shadow: 0 0 15px 4px rgba(255, 204, 0, 0.7);
+  animation: enhanced-debris-fall 2.5s ease-out forwards;
+  animation-delay: 0.8s;
+  z-index: 102;
+}
+
+.am-israel-chai span {
+  display: inline-block;
+  animation: letter-glow 0.5s calc(var(--i) * 0.1s) forwards, israeli-glow 3s calc(1s + var(--i) * 0.1s) infinite;
+  opacity: 0;
+}
+
+/* Light particles container */
+.light-particles {
+  position: absolute;
+  left: 50%;
+  top: 45vh;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 1px;
+  z-index: 190;
+  pointer-events: none;
+}
+
+/* Individual light particle */
+.light-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 15px 5px rgba(255, 255, 255, 0.8), 
+    0 0 30px 10px rgba(0, 87, 184, 0.6),
+    0 0 3px 1px rgba(255, 255, 255, 1) inset;
+  opacity: 0;
+  animation: light-particle 3s ease-out infinite;
+}
+
+.light-particle:nth-child(even) {
+  width: 6px;
+  height: 6px;
+  background: #e6f7ff;
+  box-shadow: 
+    0 0 15px 5px rgba(230, 247, 255, 0.8), 
+    0 0 30px 10px rgba(0, 87, 184, 0.7),
+    0 0 4px 2px rgba(230, 247, 255, 1) inset;
+}
+
+.light-particle:nth-child(3n) {
+  width: 4px;
+  height: 4px;
+  background: #0057b8;
+  box-shadow: 
+    0 0 15px 5px rgba(0, 87, 184, 0.8), 
+    0 0 30px 10px rgba(255, 255, 255, 0.6),
+    0 0 3px 1px rgba(0, 87, 184, 1) inset;
+}
+
+.light-particle:nth-child(3n+1) {
+  background: linear-gradient(135deg, #ffffff, #0057b8);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  transform-origin: center center;
+}
+
+.light-particle:nth-child(1) { --x: 60px; --y: -40px; animation-delay: 1.0s; }
+.light-particle:nth-child(2) { --x: -80px; --y: -20px; animation-delay: 1.2s; }
+.light-particle:nth-child(3) { --x: 50px; --y: 30px; animation-delay: 1.4s; }
+.light-particle:nth-child(4) { --x: -60px; --y: 50px; animation-delay: 1.6s; }
+.light-particle:nth-child(5) { --x: 70px; --y: 10px; animation-delay: 1.8s; }
+.light-particle:nth-child(6) { --x: -50px; --y: -50px; animation-delay: 2.0s; }
+.light-particle:nth-child(7) { --x: 40px; --y: 60px; animation-delay: 2.2s; }
+.light-particle:nth-child(8) { --x: -70px; --y: 30px; animation-delay: 2.4s; }
+.light-particle:nth-child(9) { --x: 90px; --y: -30px; animation-delay: 2.6s; }
+.light-particle:nth-child(10) { --x: -40px; --y: 70px; animation-delay: 2.8s; }
+.light-particle:nth-child(11) { --x: 60px; --y: -60px; animation-delay: 3.0s; }
+.light-particle:nth-child(12) { --x: -90px; --y: -40px; animation-delay: 3.2s; }
